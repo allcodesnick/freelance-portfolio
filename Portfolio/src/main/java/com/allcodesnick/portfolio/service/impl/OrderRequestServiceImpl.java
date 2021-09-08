@@ -1,0 +1,46 @@
+package com.allcodesnick.portfolio.service.impl;
+
+import com.allcodesnick.portfolio.model.OrderRequest;
+import com.allcodesnick.portfolio.repository.OrderRequestRepository;
+import com.allcodesnick.portfolio.service.OrderRequestServiceInterface;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+
+@Service
+public class OrderRequestServiceImpl implements OrderRequestServiceInterface {
+
+    private OrderRequestRepository orderRequestRepository;
+
+    public OrderRequestServiceImpl(OrderRequestRepository orderRequestRepository) {
+        this.orderRequestRepository = orderRequestRepository;
+    }
+
+    @Override
+    public void saveOrderRequest(OrderRequest orderRequest) {
+        orderRequestRepository.save(orderRequest);
+    }
+
+    @Override
+    public List<OrderRequest> listOrderRequest() {
+        return orderRequestRepository.findAll();
+    }
+
+    @Override
+    public OrderRequest getOrderRequestByID(long id) {
+        return orderRequestRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public void deleteOrderRequest(long id) {
+        OrderRequest orderRequest = orderRequestRepository.findById(id).orElse(null);
+        orderRequestRepository.delete(orderRequest);
+    }
+
+    @Override
+    public OrderRequest updateOrderRequest(OrderRequest orderRequest, long id) {
+        return null;
+    }
+
+}

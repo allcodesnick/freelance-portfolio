@@ -3,6 +3,7 @@ package com.allcodesnick.portfolio.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
@@ -21,5 +22,8 @@ public class ServicesProvided {
     private double ServicePrice;
 
     private java.sql.Date expectedDuration;
+
+    @OneToMany
+    private Set<OrderRequest> request;
 
 }
