@@ -22,4 +22,6 @@ public class OrderRequest {
 
     private java.sql.Date requestedCompletionDate;
 
+    @OneToOne(mappedBy = "orderRequest")
+    private Client client;
 }

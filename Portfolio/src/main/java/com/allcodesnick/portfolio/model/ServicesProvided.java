@@ -23,7 +23,7 @@ public class ServicesProvided {
 
     private java.sql.Date expectedDuration;
 
-    @OneToMany
+    @OneToMany(mappedBy = "servicesProvided")
     private Set<OrderRequest> request;
 
 }
