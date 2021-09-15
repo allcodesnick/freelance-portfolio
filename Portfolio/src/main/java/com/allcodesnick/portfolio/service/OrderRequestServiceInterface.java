@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface OrderRequestServiceInterface {
 
-    void saveOrderRequest(OrderRequest orderRequest);
+    OrderRequest saveOrderRequest(OrderRequest orderRequest);
 
     List<OrderRequest> listOrderRequest();
 

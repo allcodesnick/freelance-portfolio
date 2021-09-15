@@ -1,9 +1,12 @@
 package com.allcodesnick.portfolio.model;
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Set;
+
 
 @Data
 @Entity
@@ -16,13 +19,17 @@ public class Client {
 
     private String email;
 
-    @Column(length = 200)
-    private String clientDescription;
-
     @Column(length = 10, nullable = false)
     private String phoneNumber;
 
+    @CreatedDate
+    @Temporal(TemporalType.TIMESTAMP)
+    private Calendar accountCreatedDate;
+
     @OneToOne(mappedBy = "client")
     private OrderRequest orderRequest;
+
+    @OneToMany(mappedBy = "client")
+    private Set<Message> messages;
 
 }

@@ -18,8 +18,8 @@ public class OrderRequestServiceImpl implements OrderRequestServiceInterface {
     }
 
     @Override
-    public void saveOrderRequest(OrderRequest orderRequest) {
-        orderRequestRepository.save(orderRequest);
+    public OrderRequest saveOrderRequest(OrderRequest orderRequest) {
+        return orderRequestRepository.save(orderRequest);
     }
 
     @Override
@@ -40,7 +40,10 @@ public class OrderRequestServiceImpl implements OrderRequestServiceInterface {
 
     @Override
     public OrderRequest updateOrderRequest(OrderRequest orderRequest, long id) {
-        return null;
+        OrderRequest existingOrderRequest = orderRequestRepository.findById(id).orElse(null);
+        existingOrderRequest.setRequestedCompletionDate(orderRequest.getRequestedCompletionDate());
+        existingOrderRequest.setProjectDescription(orderRequest.getProjectDescription());
+        return orderRequestRepository.save(existingOrderRequest);
     }
 
 }

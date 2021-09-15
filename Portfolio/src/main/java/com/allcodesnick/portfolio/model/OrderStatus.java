@@ -1,7 +1,6 @@
 package com.allcodesnick.portfolio.model;
 
 import lombok.Data;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
@@ -12,10 +11,10 @@ public class OrderStatus {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    //Completed || In progress
-    @Type(type = "yes_no")
-    private boolean completed;
+    @Enumerated(EnumType.ORDINAL)
+    private Status status;
 
     @OneToOne
     private OrderRequest orderRequest;
+
 }

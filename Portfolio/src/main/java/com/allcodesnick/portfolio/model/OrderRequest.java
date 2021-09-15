@@ -1,6 +1,7 @@
 package com.allcodesnick.portfolio.model;
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.util.Calendar;
@@ -16,12 +17,14 @@ public class OrderRequest {
     @ManyToOne
     private ServicesProvided servicesProvided;
 
-    private boolean freelancesResponse;
-
+    @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar dateRequested;
 
     private java.sql.Date requestedCompletionDate;
+
+    @Column(length = 400)
+    private String projectDescription;
 
     @OneToOne
     private Client client;

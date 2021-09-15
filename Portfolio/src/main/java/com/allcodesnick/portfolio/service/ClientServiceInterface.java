@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ClientServiceInterface {
 
-    void saveClient(Client client);
+    Client saveClient(Client client);
 
     List<Client> listClients();
 

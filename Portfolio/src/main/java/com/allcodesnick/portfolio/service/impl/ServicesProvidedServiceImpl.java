@@ -19,8 +19,8 @@ public class ServicesProvidedServiceImpl implements ServicesProvidedServiceInter
     }
 
     @Override
-    public void saveServiceProvided(ServicesProvided servicesProvided){
-        servicesProvidedRepository.save(servicesProvided);
+    public ServicesProvided saveServiceProvided(ServicesProvided servicesProvided){
+        return servicesProvidedRepository.save(servicesProvided);
     }
 
     @Override
@@ -37,16 +37,15 @@ public class ServicesProvidedServiceImpl implements ServicesProvidedServiceInter
     public void deleteServiceProvided(long id){
         ServicesProvided servicesProvided = servicesProvidedRepository.findById(id).orElse(null);
         servicesProvidedRepository.delete(servicesProvided);
-
     }
 
     @Override
-    public void updateServiceProvided(ServicesProvided servicesProvided,long id){
+    public ServicesProvided updateServiceProvided(ServicesProvided servicesProvided,long id){
         ServicesProvided existingServiceProvided = servicesProvidedRepository.findById(id).orElse(null);
         existingServiceProvided.setServiceName(servicesProvided.getServiceName());
         existingServiceProvided.setServiceDescription(servicesProvided.getServiceDescription());
         existingServiceProvided.setServicePrice(servicesProvided.getServicePrice());
         existingServiceProvided.setExpectedDuration(servicesProvided.getExpectedDuration());
-        servicesProvidedRepository.save(existingServiceProvided);
+        return servicesProvidedRepository.save(existingServiceProvided);
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ServicesProvidedServiceInterface {
 
-    void saveServiceProvided(ServicesProvided servicesProvided);
+    ServicesProvided saveServiceProvided(ServicesProvided servicesProvided);
 
     List<ServicesProvided> listServicesProvidedList();
 
@@ -15,5 +15,5 @@ public interface ServicesProvidedServiceInterface {
 
     void deleteServiceProvided(long id);
 
-    void updateServiceProvided(ServicesProvided servicesProvided,long id);
+    ServicesProvided updateServiceProvided(ServicesProvided servicesProvided,long id);
 }

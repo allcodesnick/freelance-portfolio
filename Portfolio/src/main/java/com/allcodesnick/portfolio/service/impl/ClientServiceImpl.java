@@ -18,8 +18,8 @@ public class ClientServiceImpl implements ClientServiceInterface {
 
 
     @Override
-    public void saveClient(Client client) {
-        clientRepository.save(client);
+    public Client saveClient(Client client) {
+        return clientRepository.save(client);
     }
 
     @Override
@@ -43,7 +43,6 @@ public class ClientServiceImpl implements ClientServiceInterface {
         Client existingClient = clientRepository.findById(id).orElse(null);
         existingClient.setName(client.getName());
         existingClient.setEmail(client.getEmail());
-        existingClient.setClientDescription(client.getClientDescription());
         existingClient.setPhoneNumber(client.getPhoneNumber());
         return clientRepository.save(existingClient);
     }
