@@ -3,6 +3,7 @@ package com.allcodesnick.portfolio.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
@@ -21,6 +22,7 @@ public class Client {
     @Column(length = 10, nullable = false)
     private String phoneNumber;
 
-    @OneToOne
+    @OneToOne(mappedBy = "client")
     private OrderRequest orderRequest;
+
 }

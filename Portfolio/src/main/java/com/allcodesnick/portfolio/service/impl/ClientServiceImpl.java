@@ -29,17 +29,23 @@ public class ClientServiceImpl implements ClientServiceInterface {
 
     @Override
     public Client getClientById(long id) {
-        return null;
+        return clientRepository.findById(id).orElse(null);
     }
 
     @Override
     public void deleteClient(long id) {
-
+        Client client = clientRepository.findById(id).orElse(null);
+        clientRepository.delete(client);
     }
 
     @Override
     public Client updateClient(Client client, long id) {
-        return null;
+        Client existingClient = clientRepository.findById(id).orElse(null);
+        existingClient.setName(client.getName());
+        existingClient.setEmail(client.getEmail());
+        existingClient.setClientDescription(client.getClientDescription());
+        existingClient.setPhoneNumber(client.getPhoneNumber());
+        return clientRepository.save(existingClient);
     }
 }
 

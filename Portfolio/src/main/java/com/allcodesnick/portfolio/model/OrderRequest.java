@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Calendar;
+import java.util.Set;
 
 @Data
 @Entity
@@ -22,6 +23,12 @@ public class OrderRequest {
 
     private java.sql.Date requestedCompletionDate;
 
-    @OneToOne(mappedBy = "orderRequest")
+    @OneToOne
     private Client client;
+
+    @OneToMany(mappedBy = "orderRequest")
+    private Set<Document> documents;
+
+    @OneToOne(mappedBy = "orderRequest")
+    private OrderStatus orderStatus;
 }
