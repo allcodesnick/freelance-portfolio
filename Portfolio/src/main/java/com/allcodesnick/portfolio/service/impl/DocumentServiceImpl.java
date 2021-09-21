@@ -23,7 +23,6 @@ public class DocumentServiceImpl implements DocumentServiceInterface {
     public Document saveFile(MultipartFile file) throws IOException {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
         Document document = new Document(fileName, file.getContentType(), file.getBytes());
-
         return documentsRepository.save(document);
     }
 
