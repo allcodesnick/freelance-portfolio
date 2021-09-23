@@ -6,16 +6,14 @@ import javax.persistence.*;
 
 @Data
 @Entity
-public class Role {
+public class UserRoles {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String roleName;
+    private String role;
 
-    /*
     @ManyToOne
     private User user;
 
-     */
 }

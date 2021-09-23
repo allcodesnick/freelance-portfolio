@@ -41,7 +41,7 @@ public class ClientServiceImpl implements ClientServiceInterface {
     @Override
     public Client updateClient(Client client, long id) {
         Client existingClient = clientRepository.findById(id).orElse(null);
-        existingClient.setName(client.getName());
+        existingClient.setFullName(client.getFullName());
         existingClient.setEmail(client.getEmail());
         existingClient.setPhoneNumber(client.getPhoneNumber());
         return clientRepository.save(existingClient);

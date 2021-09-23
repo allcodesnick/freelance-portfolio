@@ -3,12 +3,14 @@ package com.allcodesnick.portfolio.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String username;
@@ -16,10 +18,9 @@ public class User {
     private String password;
 
     private boolean active;
-/*
+
     @OneToMany(mappedBy = "user")
- */
-    private String roles;
+    private Set<UserRoles> userRoles;
 
     @OneToOne(mappedBy = "user")
     private Client client;
