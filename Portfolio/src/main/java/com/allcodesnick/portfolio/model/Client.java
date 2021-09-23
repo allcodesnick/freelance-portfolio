@@ -32,4 +32,6 @@ public class Client {
     @OneToMany(mappedBy = "client")
     private Set<Message> messages;
 
+    @OneToOne
+    private User user;
 }
