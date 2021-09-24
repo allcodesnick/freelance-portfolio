@@ -3,6 +3,7 @@ package com.allcodesnick.portfolio.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -18,7 +19,7 @@ public class User {
 
     private boolean active;
 
-    @OneToMany(mappedBy = "user")
+    @ManyToMany(mappedBy = "user")
     private Set<UserRoles> userRoles;
 
     @OneToOne(mappedBy = "user")

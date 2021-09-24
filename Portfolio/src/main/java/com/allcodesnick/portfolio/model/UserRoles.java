@@ -3,6 +3,7 @@ package com.allcodesnick.portfolio.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
@@ -13,7 +14,7 @@ public class UserRoles {
 
     private String role;
 
-    @ManyToOne
-    private User user;
+    @ManyToMany
+    private Set<User> user;
 
 }
