@@ -3,8 +3,6 @@ package com.allcodesnick.portfolio.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Data
 @Entity
@@ -17,10 +15,15 @@ public class User {
 
     private String password;
 
-    private boolean active;
+    private boolean isEnabled;
 
-    @ManyToMany(mappedBy = "user")
-    private Set<UserRoles> userRoles;
+    private boolean isAccountNonExpired;
+
+    private boolean isAccountNonLocked;
+
+    private boolean isCredentialsNonExpired;
+
+    private String roles;
 
     @OneToOne(mappedBy = "user")
     private Client client;
