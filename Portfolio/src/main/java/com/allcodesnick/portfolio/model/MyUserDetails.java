@@ -5,9 +5,11 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.*;
-import java.util.stream.Collectors;
+
 
 public class MyUserDetails implements UserDetails {
+
+    String ROLE_PREFIX = "ROLE_";
 
     private String username;
 
@@ -21,7 +23,7 @@ public class MyUserDetails implements UserDetails {
 
     private boolean isCredentialsNonExpired;
 
-    private List<GrantedAuthority> authorities;
+    private Roles authorities;
 
     public MyUserDetails(User user) {
         this.username = user.getUsername();
@@ -30,14 +32,14 @@ public class MyUserDetails implements UserDetails {
         this.isAccountNonExpired = user.isAccountNonExpired();
         this.isAccountNonLocked = user.isAccountNonLocked();
         this.isCredentialsNonExpired = user.isCredentialsNonExpired();
-        this.authorities = Arrays.stream(user.getRoles().split(","))
-                .map(SimpleGrantedAuthority:: new)
-                .collect(Collectors.toList());
+        this.authorities = user.getRoles();
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return authorities;
+        List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
+        list.add(new SimpleGrantedAuthority(ROLE_PREFIX + authorities));
+        return list;
     }
 
     @Override

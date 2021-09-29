@@ -15,6 +15,9 @@ public class User {
 
     private String password;
 
+    @Enumerated(EnumType.ORDINAL)
+    private Roles roles;
+
     private boolean isEnabled;
 
     private boolean isAccountNonExpired;
@@ -22,8 +25,6 @@ public class User {
     private boolean isAccountNonLocked;
 
     private boolean isCredentialsNonExpired;
-
-    private String roles;
 
     @OneToOne(mappedBy = "user")
     private Client client;
