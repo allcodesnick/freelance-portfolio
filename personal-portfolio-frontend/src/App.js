@@ -1,10 +1,17 @@
 import './App.css';
-import ListServicesComponent from './components/ListServicesComponent';
+import FooterComponent from './components/FooterComponent';
+import HeaderComponent from './components/HeaderComponent';
+import ListProvidedServicesComponent from './components/ListProvidedServicesComponent';
 
 function App() {
   return (
-    <div className="container">
-      <ListServicesComponent />
+    <div>
+
+      <HeaderComponent />
+      <div className="container">
+        <ListProvidedServicesComponent />
+      </div>
+      <FooterComponent />
     </div>
   );
 }

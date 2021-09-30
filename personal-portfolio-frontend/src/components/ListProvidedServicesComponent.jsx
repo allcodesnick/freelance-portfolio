@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ProvidedServicesService from '../services/ProvidedServicesService';
+import ProvidedServices from '../services/ProvidedServices-Service';
 
-class ListServicesComponent extends Component {
+class ListProvidedServicesComponent extends Component {
     constructor(props) {
         super(props);
 
@@ -11,7 +11,7 @@ class ListServicesComponent extends Component {
     }
 
     componentDidMount(){
-        ProvidedServicesService.getServices().then((res) => {
+        ProvidedServices.getServices().then((res) => {
             this.setState({ services: res.data });
         });
     }
@@ -44,14 +44,13 @@ class ListServicesComponent extends Component {
                                     </tr>
                                 )
                             }
-
                         </tbody>
             
-                        </table>    
+                    </table>    
                 </div>
             </div>
         );
     }
 }
 
-export default ListServicesComponent;
+export default ListProvidedServicesComponent;
