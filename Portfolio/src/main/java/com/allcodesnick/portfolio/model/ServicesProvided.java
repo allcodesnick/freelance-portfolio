@@ -16,10 +16,10 @@ public class ServicesProvided {
     private String serviceName;
 
     @Column(length = 400)
-    private String ServiceDescription;
+    private String serviceDescription;
 
     @Column(precision=16, scale=2)
-    private double ServicePrice;
+    private double servicePrice;
 
     private java.sql.Date expectedDuration;
 

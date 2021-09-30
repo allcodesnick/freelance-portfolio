@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProvidedServicesService from '../services/ProvidedServicesService';
 
 class ListServicesComponent extends Component {
     constructor(props) {
@@ -7,6 +8,12 @@ class ListServicesComponent extends Component {
         this.state = {
             services:[]
         }
+    }
+
+    componentDidMount(){
+        ProvidedServicesService.getServices().then((res) => {
+            this.setState({ services: res.data });
+        });
     }
     
     render() {
@@ -30,11 +37,10 @@ class ListServicesComponent extends Component {
                                 this.state.services.map(
                                     service => 
                                     <tr key = { service.id }>
-                                        <td>{ service.name }</td>
-                                        <td>{ service.description }</td>
-                                        <td>{ service.price }</td>
-                                        <td>{ service.duration }</td>
-
+                                        <td>{ service.serviceName }</td>
+                                        <td>{ service.serviceDescription }</td>
+                                        <td>{ service.servicePrice }</td>
+                                        <td>{ service.expectedDuration }</td>
                                     </tr>
                                 )
                             }
