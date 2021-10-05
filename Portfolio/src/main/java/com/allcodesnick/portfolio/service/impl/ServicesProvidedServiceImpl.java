@@ -24,9 +24,10 @@ public class ServicesProvidedServiceImpl implements ServicesProvidedServiceInter
     }
 
     @Override
-    public List<ServicesProvided> listServicesProvidedList(){
+    public List<ServicesProvided> listServicesProvided(){
         return servicesProvidedRepository.findAll();
     }
+
 
     @Override
     public ServicesProvided getServiceProvidedByID(long id){

@@ -9,7 +9,7 @@ public interface ServicesProvidedServiceInterface {
 
     ServicesProvided saveServiceProvided(ServicesProvided servicesProvided);
 
-    List<ServicesProvided> listServicesProvidedList();
+    List<ServicesProvided> listServicesProvided();
 
     ServicesProvided getServiceProvidedByID(long id);
 

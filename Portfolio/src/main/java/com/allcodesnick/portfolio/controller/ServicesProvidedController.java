@@ -2,10 +2,7 @@ package com.allcodesnick.portfolio.controller;
 
 import com.allcodesnick.portfolio.model.ServicesProvided;
 import com.allcodesnick.portfolio.service.ServicesProvidedServiceInterface;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,9 +18,14 @@ public class ServicesProvidedController {
     }
 
     @GetMapping("/services")
-    public List<ServicesProvided> getServicesProvided(){
-        return servicesProvidedServiceInterface.listServicesProvidedList();
+    public List<ServicesProvided> getServicesProvidedList(){
+        return servicesProvidedServiceInterface.listServicesProvided();
     }
 
+
+    @PostMapping("/services")
+    public ServicesProvided createServiceProvided(@RequestBody ServicesProvided servicesProvided){
+        return servicesProvidedServiceInterface.saveServiceProvided(servicesProvided);
+    }
 
 }

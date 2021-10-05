@@ -8,6 +8,11 @@ class ListProvidedServicesComponent extends Component {
         this.state = {
             services:[]
         }
+        this.addService = this.addService.bind(this);
+    }
+
+    addService(){
+        this.props.history.push('/add-service');
     }
 
     componentDidMount(){
@@ -20,6 +25,9 @@ class ListProvidedServicesComponent extends Component {
         return (
             <div>
                 <h1 className="text-center">Services List</h1>
+                <div className="row">
+                    <button className="btn btn-primary" onClick={this.addService}>Add Service</button>
+                </div>
                 <div className="row">
                     <table className="table table-striped table bordered">
                         <thead>
