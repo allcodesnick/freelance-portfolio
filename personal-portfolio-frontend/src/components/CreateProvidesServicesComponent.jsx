@@ -7,7 +7,7 @@ class CreateProvidesServicesComponent extends Component {
             serviceName: '',
             serviceDescription: '',
             servicePrice: 0,
-            expectedDuration: 0
+            expectedDuration: Date()
         }
         this.changeServiceNameHandler = this.changeServiceNameHandler.bind(this);
         this.changeServiceDescriptonHandler = this.changeServiceDescriptonHandler.bind(this);
