@@ -8,6 +8,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
+@RequestMapping("/user")
 public class ProductController {
 
     private ProductService productService;
@@ -21,7 +22,6 @@ public class ProductController {
     public List<Product> getServicesProvidedList(){
         return productService.listProducts();
     }
-
 
     @PostMapping("/services")
     public Product createServiceProvided(@RequestBody Product product){
