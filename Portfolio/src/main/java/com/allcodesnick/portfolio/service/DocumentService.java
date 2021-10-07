@@ -5,7 +5,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 
-public interface DocumentServiceInterface {
+public interface DocumentService {
 
     Document saveFile(MultipartFile file) throws IOException;
 

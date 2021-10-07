@@ -2,17 +2,17 @@ package com.allcodesnick.portfolio.service.impl;
 
 import com.allcodesnick.portfolio.model.Message;
 import com.allcodesnick.portfolio.repository.MessageRepository;
-import com.allcodesnick.portfolio.service.MessageServiceInterface;
+import com.allcodesnick.portfolio.service.MessageService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class MessageServiceImpl implements MessageServiceInterface {
+public class MessageManager implements MessageService {
 
     private MessageRepository messageRepository;
 
-    public MessageServiceImpl(MessageRepository messageRepository) {
+    public MessageManager(MessageRepository messageRepository) {
         super();
         this.messageRepository = messageRepository;
     }

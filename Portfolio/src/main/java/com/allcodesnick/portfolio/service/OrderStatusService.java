@@ -2,7 +2,7 @@ package com.allcodesnick.portfolio.service;
 
 import com.allcodesnick.portfolio.model.OrderStatus;
 
-public interface OrderStatusServiceInterface {
+public interface OrderStatusService {
 
     OrderStatus saveOrderStatus(OrderStatus orderStatus);
 

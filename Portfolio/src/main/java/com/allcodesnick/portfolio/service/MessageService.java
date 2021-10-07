@@ -4,7 +4,7 @@ import com.allcodesnick.portfolio.model.Message;
 
 import java.util.List;
 
-public interface MessageServiceInterface {
+public interface MessageService {
 
     Message saveMessage(Message message);
 

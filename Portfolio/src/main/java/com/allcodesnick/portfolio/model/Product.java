@@ -7,23 +7,23 @@ import java.util.Set;
 
 @Data
 @Entity
-public class ServicesProvided {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(length = 45)
-    private String serviceName;
+    private String productName;
 
     @Column(length = 400)
-    private String serviceDescription;
+    private String productDescription;
 
     @Column(precision=16, scale=2)
-    private double servicePrice;
+    private double productPrice;
 
     private java.sql.Date expectedDuration;
 
-    @OneToMany(mappedBy = "servicesProvided")
+    @OneToMany(mappedBy = "product")
     private Set<OrderRequest> request;
 
 }

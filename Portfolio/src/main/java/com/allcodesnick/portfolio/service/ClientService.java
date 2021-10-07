@@ -4,7 +4,7 @@ import com.allcodesnick.portfolio.model.Client;
 
 import java.util.List;
 
-public interface ClientServiceInterface {
+public interface ClientService {
 
     Client saveClient(Client client);
 

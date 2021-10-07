@@ -2,18 +2,18 @@ package com.allcodesnick.portfolio.service.impl;
 
 import com.allcodesnick.portfolio.model.OrderRequest;
 import com.allcodesnick.portfolio.repository.OrderRequestRepository;
-import com.allcodesnick.portfolio.service.OrderRequestServiceInterface;
+import com.allcodesnick.portfolio.service.OrderRequestService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 
 @Service
-public class OrderRequestServiceImpl implements OrderRequestServiceInterface {
+public class OrderRequestManager implements OrderRequestService {
 
     private OrderRequestRepository orderRequestRepository;
 
-    public OrderRequestServiceImpl(OrderRequestRepository orderRequestRepository) {
+    public OrderRequestManager(OrderRequestRepository orderRequestRepository) {
         this.orderRequestRepository = orderRequestRepository;
     }
 

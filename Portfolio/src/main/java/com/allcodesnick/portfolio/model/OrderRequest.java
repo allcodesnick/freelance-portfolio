@@ -15,7 +15,7 @@ public class OrderRequest {
     private long id;
 
     @ManyToOne
-    private ServicesProvided servicesProvided;
+    private Product product;
 
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)

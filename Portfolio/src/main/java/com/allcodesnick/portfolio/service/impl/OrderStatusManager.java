@@ -2,15 +2,15 @@ package com.allcodesnick.portfolio.service.impl;
 
 import com.allcodesnick.portfolio.model.OrderStatus;
 import com.allcodesnick.portfolio.repository.OrderStatusRepository;
-import com.allcodesnick.portfolio.service.OrderStatusServiceInterface;
+import com.allcodesnick.portfolio.service.OrderStatusService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class OrderStatusServiceImpl implements OrderStatusServiceInterface {
+public class OrderStatusManager implements OrderStatusService {
 
     private OrderStatusRepository orderStatusRepository;
 
-    public OrderStatusServiceImpl(OrderStatusRepository orderStatusRepository) {
+    public OrderStatusManager(OrderStatusRepository orderStatusRepository) {
         super();
         this.orderStatusRepository = orderStatusRepository;
     }

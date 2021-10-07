@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.*;
 
 
-public class MyUserDetails implements UserDetails {
+public class ApplicationUserDetails implements UserDetails {
 
     String ROLE_PREFIX = "ROLE_";
 
@@ -25,7 +25,7 @@ public class MyUserDetails implements UserDetails {
 
     private Roles authorities;
 
-    public MyUserDetails(User user) {
+    public ApplicationUserDetails(User user) {
         this.username = user.getUsername();
         this.password = user.getPassword();
         this.isEnabled = user.isEnabled();

@@ -5,7 +5,7 @@ import org.hibernate.criterion.Order;
 
 import java.util.List;
 
-public interface OrderRequestServiceInterface {
+public interface OrderRequestService {
 
     OrderRequest saveOrderRequest(OrderRequest orderRequest);
 

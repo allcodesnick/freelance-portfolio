@@ -2,7 +2,7 @@ package com.allcodesnick.portfolio.service.impl;
 
 import com.allcodesnick.portfolio.model.Document;
 import com.allcodesnick.portfolio.repository.DocumentsRepository;
-import com.allcodesnick.portfolio.service.DocumentServiceInterface;
+import com.allcodesnick.portfolio.service.DocumentService;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -10,11 +10,11 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 @Service
-public class DocumentServiceImpl implements DocumentServiceInterface {
+public class DocumentManager implements DocumentService {
 
     private DocumentsRepository documentsRepository;
 
-    public DocumentServiceImpl(DocumentsRepository documentsRepository) {
+    public DocumentManager(DocumentsRepository documentsRepository) {
         super();
         this.documentsRepository = documentsRepository;
     }
@@ -37,6 +37,4 @@ public class DocumentServiceImpl implements DocumentServiceInterface {
         documentsRepository.delete(existingDocument);
 
     }
-
-
 }

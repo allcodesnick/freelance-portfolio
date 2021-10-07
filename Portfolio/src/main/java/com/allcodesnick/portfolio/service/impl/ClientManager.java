@@ -2,17 +2,17 @@ package com.allcodesnick.portfolio.service.impl;
 
 import com.allcodesnick.portfolio.model.Client;
 import com.allcodesnick.portfolio.repository.ClientRepository;
-import com.allcodesnick.portfolio.service.ClientServiceInterface;
+import com.allcodesnick.portfolio.service.ClientService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class ClientServiceImpl implements ClientServiceInterface {
+public class ClientManager implements ClientService {
 
     private ClientRepository clientRepository;
 
-    public ClientServiceImpl(ClientRepository clientRepository) {
+    public ClientManager(ClientRepository clientRepository) {
         this.clientRepository = clientRepository;
     }
 
