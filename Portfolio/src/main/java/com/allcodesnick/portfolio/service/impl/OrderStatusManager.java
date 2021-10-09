@@ -1,5 +1,6 @@
 package com.allcodesnick.portfolio.service.impl;
 
+import com.allcodesnick.portfolio.exception.ResourceNotFoundException;
 import com.allcodesnick.portfolio.model.OrderStatus;
 import com.allcodesnick.portfolio.repository.OrderStatusRepository;
 import com.allcodesnick.portfolio.service.OrderStatusService;
@@ -22,14 +23,20 @@ public class OrderStatusManager implements OrderStatusService {
 
     @Override
     public OrderStatus getOrderStatusById(long id){
-        return orderStatusRepository.findById(id).orElse(null);
+        return orderStatusRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Order Status","ID", id));
     }
 
     @Override
     public OrderStatus updateOrderStatus(OrderStatus orderStatus, long id){
-        OrderStatus existingOrderStatus = orderStatusRepository.findById(id).orElse(null);
+        OrderStatus existingOrderStatus = orderStatusRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Order Status","ID", id));
         existingOrderStatus.setStatus(orderStatus.getStatus());
         return orderStatusRepository.save(existingOrderStatus);
+    }
+
+    @Override
+    public void deleteOrderStatus(long id) {
+        OrderStatus orderStatus = orderStatusRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Order Status","ID", id));
+        orderStatusRepository.delete(orderStatus);
     }
 
 }

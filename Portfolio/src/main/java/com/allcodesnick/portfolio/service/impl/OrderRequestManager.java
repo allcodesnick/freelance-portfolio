@@ -1,5 +1,6 @@
 package com.allcodesnick.portfolio.service.impl;
 
+import com.allcodesnick.portfolio.exception.ResourceNotFoundException;
 import com.allcodesnick.portfolio.model.OrderRequest;
 import com.allcodesnick.portfolio.repository.OrderRequestRepository;
 import com.allcodesnick.portfolio.service.OrderRequestService;
@@ -29,18 +30,18 @@ public class OrderRequestManager implements OrderRequestService {
 
     @Override
     public OrderRequest getOrderRequestByID(long id) {
-        return orderRequestRepository.findById(id).orElse(null);
+        return orderRequestRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Order Request","ID", id));
     }
 
     @Override
     public void deleteOrderRequest(long id) {
-        OrderRequest orderRequest = orderRequestRepository.findById(id).orElse(null);
+        OrderRequest orderRequest = orderRequestRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Order Request","ID", id));
         orderRequestRepository.delete(orderRequest);
     }
 
     @Override
     public OrderRequest updateOrderRequest(OrderRequest orderRequest, long id) {
-        OrderRequest existingOrderRequest = orderRequestRepository.findById(id).orElse(null);
+        OrderRequest existingOrderRequest = orderRequestRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Order Request","ID", id));
         existingOrderRequest.setRequestedCompletionDate(orderRequest.getRequestedCompletionDate());
         existingOrderRequest.setProjectDescription(orderRequest.getProjectDescription());
         return orderRequestRepository.save(existingOrderRequest);

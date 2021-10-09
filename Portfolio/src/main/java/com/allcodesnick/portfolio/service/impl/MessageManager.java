@@ -1,5 +1,6 @@
 package com.allcodesnick.portfolio.service.impl;
 
+import com.allcodesnick.portfolio.exception.ResourceNotFoundException;
 import com.allcodesnick.portfolio.model.Message;
 import com.allcodesnick.portfolio.repository.MessageRepository;
 import com.allcodesnick.portfolio.service.MessageService;
@@ -29,18 +30,18 @@ public class MessageManager implements MessageService {
 
     @Override
     public Message getMessageById(long id){
-        return messageRepository.findById(id).orElse(null);
+        return messageRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Message","ID", id));
     }
 
     @Override
     public void deleteMessage(long id){
-        Message message = messageRepository.findById(id).orElse(null);
+        Message message = messageRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Message","ID", id));
         messageRepository.delete(message);
     }
 
     @Override
     public Message updateMessage(Message message, long id){
-        Message existingMessage = messageRepository.findById(id).orElse(null);
+        Message existingMessage = messageRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Message","ID", id));
         existingMessage.setMessage(message.getMessage());
         return messageRepository.save(existingMessage);
     }

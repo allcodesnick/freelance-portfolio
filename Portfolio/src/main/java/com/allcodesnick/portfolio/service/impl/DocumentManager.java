@@ -1,5 +1,6 @@
 package com.allcodesnick.portfolio.service.impl;
 
+import com.allcodesnick.portfolio.exception.ResourceNotFoundException;
 import com.allcodesnick.portfolio.model.Document;
 import com.allcodesnick.portfolio.repository.DocumentsRepository;
 import com.allcodesnick.portfolio.service.DocumentService;
@@ -28,12 +29,12 @@ public class DocumentManager implements DocumentService {
 
     @Override
     public Document getFile(long id) {
-        return documentsRepository.findById(id).orElse(null);
+        return documentsRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("File","ID", id));
     }
 
     @Override
     public void deleteDocument(long id) {
-        Document existingDocument = documentsRepository.findById(id).orElse(null);
+        Document existingDocument = documentsRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("File","ID", id));
         documentsRepository.delete(existingDocument);
 
     }

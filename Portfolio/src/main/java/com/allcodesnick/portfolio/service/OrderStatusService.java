@@ -9,4 +9,6 @@ public interface OrderStatusService {
     OrderStatus getOrderStatusById(long id);
 
     OrderStatus updateOrderStatus(OrderStatus orderStatus, long id);
+
+    void deleteOrderStatus(long id);
 }
