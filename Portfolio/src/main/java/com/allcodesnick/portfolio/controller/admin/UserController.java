@@ -1,4 +1,4 @@
-package com.allcodesnick.portfolio.controller;
+package com.allcodesnick.portfolio.controller.admin;
 
 import com.allcodesnick.portfolio.model.Product;
 import com.allcodesnick.portfolio.service.ProductService;
@@ -9,11 +9,11 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/user")
-public class ProductController {
+public class UserController {
 
     private ProductService productService;
 
-    public ProductController(ProductService productService) {
+    public UserController(ProductService productService) {
         super();
         this.productService = productService;
     }

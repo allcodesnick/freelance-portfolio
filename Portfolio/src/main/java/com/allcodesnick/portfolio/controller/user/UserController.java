@@ -1,0 +1,31 @@
+package com.allcodesnick.portfolio.controller.user;
+
+import com.allcodesnick.portfolio.model.Product;
+import com.allcodesnick.portfolio.service.ProductService;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@CrossOrigin(origins = "http://localhost:3000")
+@RestController
+@RequestMapping("/user")
+public class UserController {
+
+    private ProductService productService;
+
+    public UserController(ProductService productService) {
+        super();
+        this.productService = productService;
+    }
+
+    @GetMapping("/services")
+    public List<Product> getServicesProvidedList(){
+        return productService.listProducts();
+    }
+
+    @PostMapping("/services")
+    public Product createServiceProvided(@RequestBody Product product){
+        return productService.saveProduct(product);
+    }
+
+}
