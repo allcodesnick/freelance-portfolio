@@ -31,4 +31,17 @@ public class User {
     @OneToOne(mappedBy = "user")
     private Client client;
 
+    public User(){
+
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+        this.roles = Roles.USER;
+        this.isEnabled = true;
+        this.isAccountNonExpired = true;
+        this.isAccountNonLocked = true;
+        this.isCredentialsNonExpired = true;
+    }
 }

@@ -1,6 +1,7 @@
 package com.allcodesnick.portfolio.service.impl;
 
 import com.allcodesnick.portfolio.model.ApplicationUserDetails;
+import com.allcodesnick.portfolio.model.Roles;
 import com.allcodesnick.portfolio.model.User;
 import com.allcodesnick.portfolio.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,6 +20,11 @@ public class UserDetailManager implements UserDetailsService {
         this.userRepository = userRepository;
     }
 
+    public User createUserAccount(User user){
+        User newUserAccount = new User(user.getUsername(), user.getPassword());
+        return userRepository.save(newUserAccount);
+    }
+    
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> user = userRepository.findUserByUsername(username);
