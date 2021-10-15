@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ProductService {
 
-    Product saveProduct(Product product);
+    Product createProduct(Product product);
 
     List<Product> listProducts();
 
@@ -16,4 +16,6 @@ public interface ProductService {
     void deleteProduct(long id);
 
     Product updateProduct(Product product, long id);
+
+    void addProductOrderRequest(long productId, long orderRequestId);
 }

@@ -6,6 +6,9 @@ import javax.persistence.*;
 
 @Data
 @Entity
+@Table(uniqueConstraints={
+        @UniqueConstraint(columnNames = {"username", "password"})
+})
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +31,7 @@ public class User {
 
     private boolean isCredentialsNonExpired;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Client client;
 
     public User(){
@@ -44,4 +47,5 @@ public class User {
         this.isAccountNonLocked = true;
         this.isCredentialsNonExpired = true;
     }
+
 }

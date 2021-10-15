@@ -1,24 +1,29 @@
 package com.allcodesnick.portfolio.controller;
 
 import com.allcodesnick.portfolio.model.User;
-import com.allcodesnick.portfolio.service.impl.UserDetailManager;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import com.allcodesnick.portfolio.service.UserService;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
+@RequestMapping("/")
 public class LoginController {
 
-    private UserDetailManager userDetailManager;
+    private UserService userService;
 
-    public LoginController(UserDetailManager userDetailManager) {
-        this.userDetailManager = userDetailManager;
+    public LoginController(UserService userService) {
+        this.userService = userService;
     }
 
     @PostMapping("/createUserAccount")
     public User createUserAccount(@RequestBody User user){
-        return userDetailManager.createUserAccount(user);
+        return userService.createUserAccount(user);
+    }
+
+    // Redirect Method
+    @GetMapping("/other-hello-world")
+    public ModelAndView hello(){
+        return new ModelAndView("redirect:/");
     }
 
 }

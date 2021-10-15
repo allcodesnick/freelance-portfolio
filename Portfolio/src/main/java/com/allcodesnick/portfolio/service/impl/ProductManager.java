@@ -2,8 +2,10 @@ package com.allcodesnick.portfolio.service.impl;
 
 
 import com.allcodesnick.portfolio.exception.ResourceNotFoundException;
+import com.allcodesnick.portfolio.model.OrderRequest;
 import com.allcodesnick.portfolio.model.Product;
 import com.allcodesnick.portfolio.repository.ProductRepository;
+import com.allcodesnick.portfolio.service.OrderRequestService;
 import com.allcodesnick.portfolio.service.ProductService;
 import org.springframework.stereotype.Service;
 
@@ -13,14 +15,16 @@ import java.util.List;
 public class ProductManager implements ProductService {
 
     private ProductRepository productRepository;
+    private OrderRequestService orderRequestService;
 
-    public ProductManager(ProductRepository productRepository) {
+    public ProductManager(ProductRepository productRepository, OrderRequestService orderRequestService) {
         super();
         this.productRepository = productRepository;
+        this.orderRequestService = orderRequestService;
     }
 
     @Override
-    public Product saveProduct(Product product){
+    public Product createProduct(Product product){
         return productRepository.save(product);
     }
 
@@ -50,4 +54,12 @@ public class ProductManager implements ProductService {
         existingServiceProvided.setExpectedDuration(product.getExpectedDuration());
         return productRepository.save(existingServiceProvided);
     }
+
+    public void addProductOrderRequest(long productId, long orderRequestId){
+        Product existingProduct = getProductsByID(productId);
+        OrderRequest existingOrderRequest = orderRequestService.getOrderRequestByID(orderRequestId);
+        existingProduct.addProductOrderRequest(existingOrderRequest);
+    }
+
+
 }

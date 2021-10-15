@@ -24,6 +24,16 @@ public class Product {
     private java.sql.Date expectedDuration;
 
     @OneToMany(mappedBy = "product")
-    private Set<OrderRequest> request;
+    private Set<OrderRequest> productRequests;
 
+    // Add Order Request to Product
+
+    public void addProductOrderRequest(OrderRequest orderRequest){
+        productRequests.add(orderRequest);
+    }
+
+    // Delete Order Request
+    public void deleteProductOrderRequest(OrderRequest orderRequest){
+        productRequests.remove(orderRequest);
+    }
 }
