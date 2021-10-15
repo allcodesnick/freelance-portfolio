@@ -1,31 +1,33 @@
-package com.allcodesnick.portfolio.controller.user;
+package com.allcodesnick.portfolio.controller.admin;
 
 import com.allcodesnick.portfolio.model.OrderRequest;
 import com.allcodesnick.portfolio.service.OrderRequestService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/order-request")
-public class UserOrderRequestController {
+@RequestMapping("/admin/order-request")
+public class AdminOrderRequestController {
 
     private OrderRequestService orderRequestService;
 
-    public UserOrderRequestController(OrderRequestService orderRequestService) {
+    public AdminOrderRequestController(OrderRequestService orderRequestService) {
         this.orderRequestService = orderRequestService;
     }
 
-    @PostMapping("/create")
-    public OrderRequest createOrderRequest(@RequestBody OrderRequest orderRequest) {
-        return orderRequestService.saveOrderRequest(orderRequest);
+    @GetMapping("/list-all")
+    public List<OrderRequest> listOrderRequests(){
+        return orderRequestService.listOrderRequest();
     }
 
     @DeleteMapping("/delete/{orderRequestId}")
-    public void deleteOrderRequest(@PathVariable long orderRequestId) {
+    public void deleteOrderRequest(@PathVariable long orderRequestId){
         orderRequestService.deleteOrderRequest(orderRequestId);
     }
 
     @PutMapping("/update/{orderRequestId}")
-    public OrderRequest updateOrderRequest(@RequestBody OrderRequest orderRequest, @PathVariable long orderRequestId) {
+    public OrderRequest updateOrderRequest(@RequestBody OrderRequest orderRequest, @PathVariable long orderRequestId){
         return orderRequestService.updateOrderRequest(orderRequest, orderRequestId);
     }
 

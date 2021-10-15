@@ -35,7 +35,6 @@ public class User {
     private Client client;
 
     public User(){
-
     }
 
     public User(String username, String password) {

@@ -55,11 +55,4 @@ public class ProductManager implements ProductService {
         return productRepository.save(existingServiceProvided);
     }
 
-    public void addProductOrderRequest(long productId, long orderRequestId){
-        Product existingProduct = getProductsByID(productId);
-        OrderRequest existingOrderRequest = orderRequestService.getOrderRequestByID(orderRequestId);
-        existingProduct.addProductOrderRequest(existingOrderRequest);
-    }
-
-
 }
