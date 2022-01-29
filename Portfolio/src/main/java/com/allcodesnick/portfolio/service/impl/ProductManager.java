@@ -1,5 +1,6 @@
 package com.allcodesnick.portfolio.service.impl;
 
+import com.allcodesnick.portfolio.exception.ResourceNotFoundException;
 import com.allcodesnick.portfolio.model.Product;
 import com.allcodesnick.portfolio.repository.ProductRepository;
 import com.allcodesnick.portfolio.service.ProductService;
@@ -10,25 +11,25 @@ import java.util.List;
 @Service
 public class ProductManager implements ProductService {
 
-    private ProductRepository productRepository;
+    private ProductRepository product_repository;
 
     public ProductManager(ProductRepository productRepository) {
         super();
-        this.productRepository = productRepository;
+        this.product_repository = productRepository;
     }
 
     @Override
-    public Product create_new_product(Product product) {
-        return null;
+    public Product createNewProduct(Product product) {
+        return product_repository.save(product);
     }
 
     @Override
-    public List<Product> list_all_products() {
-        return null;
+    public List<Product> listAllProducts() {
+        return product_repository.findAll();
     }
 
     @Override
-    public Product find_product_by_id(long id) {
-        return null;
+    public Product findProductById(long id) {
+        return product_repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product", "Id", id));
     }
 }

@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface ProductService {
 
-    Product create_new_product(Product product);
+    Product createNewProduct(Product product);
 
-    List<Product> list_all_products();
+    List<Product> listAllProducts();
 
-    Product find_product_by_id(long id);
+    Product findProductById(long id);
 
 }
