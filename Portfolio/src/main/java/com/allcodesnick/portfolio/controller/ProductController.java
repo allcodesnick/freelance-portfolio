@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -26,7 +27,6 @@ public class ProductController {
     public List<Product> getAllProducts(){
         return product_service.listAllProducts();
     }
-
 
     @PostMapping("/add")
     public Product saveNewProduct(@RequestBody Product product){

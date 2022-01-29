@@ -13,7 +13,7 @@ class FooterComponent extends Component {
         return (
             <div>
                 <footer className="text-muted">
-                    All rights Reserved @Nick
+                    All rights Reserved @allcodesnick
                 </footer>
                 
             </div>

@@ -4,6 +4,7 @@ import FooterComponent from './components/FooterComponent';
 import HeaderComponent from './components/HeaderComponent';
 import ListProvidedServicesComponent from './components/ListProvidedServicesComponent';
 import CreateProvidesServicesComponent from './components/CreateProvidesServicesComponent';
+import ListProductComponent from './components/ListProductComponent';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
           <HeaderComponent />
             <div className="container">
               <Switch>
-                <Route path = "/" exact component = {ListProvidedServicesComponent}></Route>
+                <Route path = "/" exact component = {ListProductComponent}></Route>
                 <Route path = "/services" component = {ListProvidedServicesComponent}></Route>
                 <Route path = "/add-service" component = {CreateProvidesServicesComponent}></Route>
               </Switch>
