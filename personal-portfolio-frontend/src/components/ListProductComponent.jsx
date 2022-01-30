@@ -5,20 +5,21 @@ class ListProjectComponent extends Component {
     constructor(props){
         super(props);
         this.state = {
-            services:[]
+            product:[]
         }
-        this.addService = this.addService.bind(this);
+        this.addProduct = this.addProduct.bind(this);
     }
 
-    addService(){
+    addProduct(){
         this.props.history.push('/add-service')
     }
 
     componentDidMount(){
-        ProductService.getServices().then((res) => {
-            this.setState({ services: res.data });
+        ProductService.getProducts().then((res) => {
+            this.setState({ product: res.data });
         });
     }
+
     render() {
         return (
             <div>
@@ -41,19 +42,20 @@ class ListProjectComponent extends Component {
 
                         <tbody>
                             {
-                                this.state.services.map(
-                                    service => 
-                                    <tr key = { service.id }>
-                                        <td>{ service.product_name }</td>
-                                        <td>{ service.product_status }</td>
-                                        <td>{ service.product_description }</td>
-                                        <td>{ service.product_price }</td>
-                                        <td>{ service.product_timeline }</td>
-                                    </tr>
+                                this.state.product.map(
+                                    product => 
+                                    {
+                                            return <tr key={product.id}>
+                                                <td>{product.product_name}</td>
+                                                <td>{product.product_status}</td>
+                                                <td>{product.product_description}</td>
+                                                <td>{product.product_price}</td>
+                                                <td>{product.product_timeline}</td>
+                                            </tr>;
+                                        }
                                 )
                             }
                         </tbody>
-            
                     </table>    
                 </div>
                 
