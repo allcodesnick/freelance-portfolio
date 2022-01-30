@@ -9,19 +9,25 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1/")
-public class ProductController {
+public class MainController {
 
     private ProductService product_service;
 
-    public ProductController(ProductService productService) {
+    public MainController(ProductService productService) {
         super();
         this.product_service = productService;
+    }
+
+    @GetMapping("/")
+    public String indexPage(){
+        return "index";
     }
 
     @GetMapping("/products/{id}")
     public Product getProduct(@PathVariable long id){
         return product_service.findProductById(id);
     }
+
 
     @GetMapping("/products")
     public List<Product> getAllProducts(){
