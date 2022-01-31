@@ -11,7 +11,7 @@ class ListProjectComponent extends Component {
     }
 
     addProduct(){
-        this.props.history.push('/add-service')
+        this.props.history.push('/add-product')
     }
 
     componentDidMount(){
@@ -25,7 +25,7 @@ class ListProjectComponent extends Component {
             <div>
                 <h1 className="text-center">Products</h1>
                 <div className="row">
-                    <button className="btn btn-primary" onClick={this.addService}>Add Service</button>
+                    <button className="btn btn-primary" onClick={this.addProduct}>Add Product</button>
                 </div>
                 <div className="row">
                     <table className="table table-striped table bordered">

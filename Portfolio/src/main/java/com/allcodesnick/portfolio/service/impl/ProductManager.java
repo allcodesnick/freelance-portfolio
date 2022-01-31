@@ -32,4 +32,21 @@ public class ProductManager implements ProductService {
     public Product findProductById(long id) {
         return product_repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product", "Id", id));
     }
+
+    @Override
+    public void deleteProduct(long id) {
+        Product product = product_repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product", "Id", id));
+        product_repository.delete(product);
+    }
+
+    @Override
+    public Product updateProduct(long id, Product product) {
+        Product existing_product = product_repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product", "Id", id));
+        existing_product.setProduct_name(product.getProduct_name());
+        existing_product.setProduct_status(product.getProduct_status());
+        existing_product.setProduct_description(product.getProduct_description());
+        existing_product.setProduct_price(product.getProduct_price());
+        existing_product.setProduct_timeline(product.getProduct_timeline());
+        return product_repository.save(existing_product);
+    }
 }
