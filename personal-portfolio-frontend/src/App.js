@@ -4,6 +4,7 @@ import FooterComponent from './components/FooterComponent';
 import HeaderComponent from './components/HeaderComponent';
 import ListProductComponent from './components/ListProductComponent';
 import ViewProductComponent from './components/ViewProductComponent';
+import CreateProductComponent from './components/CreateProductComponent';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
               <Switch>
                 <Route path = "/" exact component = {ListProductComponent}></Route>
                 <Route path = "/view-product/:id" component = {ViewProductComponent}></Route>
+                <Route path = "/add-product" component = {CreateProductComponent}></Route>
               </Switch>
             </div>
           <FooterComponent />

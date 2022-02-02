@@ -10,11 +10,10 @@ class ListProjectComponent extends Component {
         this.addProduct = this.addProduct.bind(this);
         this.editProduct = this.editProduct.bind(this);
         this.deleteProduct = this.deleteProduct.bind(this);
-        this.viewProduct = this.viewProduct.bind(this);
     }
 
     addProduct(){
-        this.props.history.push(`/add-products`)
+        this.props.history.push(`/add-product`);
     }
 
     viewProduct(id){
