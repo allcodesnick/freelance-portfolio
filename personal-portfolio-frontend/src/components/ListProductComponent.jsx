@@ -18,11 +18,11 @@ class ListProjectComponent extends Component {
     }
 
     viewProduct(id){
-        this.props.history.push(`/products/${id}`);
+        this.props.history.push(`/view-product/${id}`);
     }
 
     editProduct(id){
-        this.props.history.push(`/update-poducts/${id}`);
+        this.props.history.push(`/poducts/${id}`);
     }
 
     deleteProduct(id){

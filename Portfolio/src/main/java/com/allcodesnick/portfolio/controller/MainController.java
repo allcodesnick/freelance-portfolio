@@ -23,7 +23,7 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/products/{id}")
+    @GetMapping("/view-product/{id}")
     public Product getProductById(@PathVariable long id){
         return product_service.findProductById(id);
     }
@@ -34,12 +34,12 @@ public class MainController {
         return product_service.listAllProducts();
     }
 
-    @PostMapping("/products")
+    @PostMapping("/add-product")
     public Product saveNewProduct(@RequestBody Product product){
         return product_service.createNewProduct(product);
     }
 
-    @DeleteMapping("/products/{id}")
+    @DeleteMapping("/delete-product/{id}")
     public void deleteProduct(@PathVariable long id){
         product_service.deleteProduct(id);
     }
