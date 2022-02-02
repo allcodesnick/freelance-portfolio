@@ -30,7 +30,7 @@ class CreateProductComponent extends Component {
     }
 
     componentDidMount(){
-        if(this.state.id === '/add-product'){
+        if(this.state.id === `/add-product`){
             return
         }else{
             ProductService.getProductsById(this.state.id).then( (res) => {
@@ -57,11 +57,11 @@ class CreateProductComponent extends Component {
 
         if(this.state.id === '/add-product'){
             ProductService.createProduct(product).then(res =>{
-                this.props.history.push('products')
+                this.props.history.push(`/products`)
             })
         } else{
             ProductService.updateProduct(product, this.state.id).then( res =>{
-                this.props.history.push('products')
+                this.props.history.push(`/products`)
             })
         }
     }
