@@ -7,6 +7,22 @@ class ProductService{
     getProducts(){
         return axios.get(PROVIDED_SERVICES_API_BASE_URL  + '/products');
     }
+
+    getProductsById(productId){
+        return axios.get(PROVIDED_SERVICES_API_BASE_URL + '/products/view/' + productId);
+    }
+
+    createProduct(product){
+        return axios.post(PROVIDED_SERVICES_API_BASE_URL + '/products');
+    }
+
+    updateProduct(productId, product){
+        return axios.put(PROVIDED_SERVICES_API_BASE_URL + '/products/' + productId);
+    }
+
+    deleteProduct(productId){
+        return axios.delete(PROVIDED_SERVICES_API_BASE_URL + '/products/' + productId);
+    }
 }
 
 

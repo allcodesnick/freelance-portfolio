@@ -8,10 +8,27 @@ class ListProjectComponent extends Component {
             product:[]
         }
         this.addProduct = this.addProduct.bind(this);
+        this.editProduct = this.editProduct.bind(this);
+        this.deleteProduct = this.deleteProduct.bind(this);
+        this.viewProduct = this.viewProduct.bind(this);
     }
 
     addProduct(){
-        this.props.history.push('/add-product')
+        this.props.history.push(`/add-products`)
+    }
+
+    viewProduct(id){
+        this.props.history.push(`/products/${id}`);
+    }
+
+    editProduct(id){
+        this.props.history.push(`/update-poducts/${id}`);
+    }
+
+    deleteProduct(id){
+        ProductService.deleteProduct(id).then( res =>{
+            this.setState({product: this.state.product.filter(product => product.id !== id)})
+        })
     }
 
     componentDidMount(){
@@ -51,6 +68,11 @@ class ListProjectComponent extends Component {
                                                 <td>{product.product_description}</td>
                                                 <td>{product.product_price}</td>
                                                 <td>{product.product_timeline}</td>
+                                                <td>
+                                                    <button onClick={ () => this.editProduct(product.id)} className = "btn btn-info">Update</button>
+                                                    <button onClick={ () => this.deleteProduct(product.id)} className = "btn btn-danger">Delete</button>
+                                                    <button onClick={ () => this.viewProduct(product.id)} className = "btn btn-danger">View</button>
+                                                </td>
                                             </tr>;
                                         }
                                 )
@@ -58,7 +80,7 @@ class ListProjectComponent extends Component {
                         </tbody>
                     </table>    
                 </div>
-                
+
             </div>
         );
     }
