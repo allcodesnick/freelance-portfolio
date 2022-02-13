@@ -11,42 +11,42 @@ import java.util.List;
 @Service
 public class ProductManager implements ProductService {
 
-    private ProductRepository product_repository;
+    private ProductRepository productRepository;
 
     public ProductManager(ProductRepository productRepository) {
         super();
-        this.product_repository = productRepository;
+        this.productRepository = productRepository;
     }
 
     @Override
     public Product createNewProduct(Product product) {
-        return product_repository.save(product);
+        return productRepository.save(product);
     }
 
     @Override
     public List<Product> listAllProducts() {
-        return product_repository.findAll();
+        return productRepository.findAll();
     }
 
     @Override
     public Product findProductById(long id) {
-        return product_repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product", "Id", id));
+        return productRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product", "Id", id));
     }
 
     @Override
     public void deleteProduct(long id) {
-        Product product = product_repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product", "Id", id));
-        product_repository.delete(product);
+        Product product = productRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product", "Id", id));
+        productRepository.delete(product);
     }
 
     @Override
     public Product updateProduct(long id, Product product) {
-        Product existing_product = product_repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product", "Id", id));
-        existing_product.setProduct_name(product.getProduct_name());
-        existing_product.setProduct_status(product.getProduct_status());
-        existing_product.setProduct_description(product.getProduct_description());
-        existing_product.setProduct_price(product.getProduct_price());
-        existing_product.setProduct_timeline(product.getProduct_timeline());
-        return product_repository.save(existing_product);
+        Product existingProduct = productRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product", "Id", id));
+        existingProduct.setProductName(product.getProductName());
+        existingProduct.setProductStatus(product.getProductStatus());
+        existingProduct.setProductDescription(product.getProductDescription());
+        existingProduct.setProductPrice(product.getProductPrice());
+        existingProduct.setProductTimeline(product.getProductTimeline());
+        return productRepository.save(existingProduct);
     }
 }

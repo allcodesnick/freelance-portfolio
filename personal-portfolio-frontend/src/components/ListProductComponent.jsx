@@ -62,11 +62,11 @@ class ListProjectComponent extends Component {
                                     product => 
                                     {
                                             return <tr key={product.id}>
-                                                <td>{product.product_name}</td>
-                                                <td>{product.product_status}</td>
-                                                <td>{product.product_description}</td>
-                                                <td>{product.product_price}</td>
-                                                <td>{product.product_timeline}</td>
+                                                <td>{product.productName}</td>
+                                                <td>{product.productStatus}</td>
+                                                <td>{product.productDescription}</td>
+                                                <td>{product.productPrice}</td>
+                                                <td>{product.productTimeline}</td>
                                                 <td>
                                                     <button onClick={ () => this.editProduct(product.id)} className = "btn btn-info">Update</button>
                                                     <button onClick={ () => this.deleteProduct(product.id)} className = "btn btn-danger">Delete</button>

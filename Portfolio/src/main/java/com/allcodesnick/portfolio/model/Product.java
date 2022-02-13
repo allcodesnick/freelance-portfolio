@@ -12,16 +12,16 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
 
-    private String product_name;
+    private String productName;
 
     @Enumerated(EnumType.ORDINAL)
-    private Status product_status;
+    private Status productStatus;
 
-    private String product_description;
+    private String productDescription;
 
-    private double product_price;
+    private double productPrice;
 
-    private int product_timeline;
+    private int productTimeline;
 
 
 }

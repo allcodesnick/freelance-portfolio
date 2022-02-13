@@ -7,26 +7,38 @@ class CreateProductComponent extends Component {
 
         this.state = {
             id: this.props.match.params.id,
-            product_name: '',
-            product_status: 0,
-            product_description: 0
+            productName: '',
+            productStatus: true,
+            productDescription: "",
+            productPrice: 0.00,
+            productTimeline: 0
         }
         this.saveOrUpdateProduct = this.saveOrUpdateProduct.bind(this);
         this.changeProductNameHandler = this.changeProductNameHandler.bind(this);
         this.changeProducStatusHandler = this.changeProducStatusHandler.bind(this);
         this.changeProductDescriptionHandler = this.changeProductDescriptionHandler.bind(this);
+        this.changeProductPriceHandler = this.changeProductPriceHandler.bind(this);
+        this.changeProductTimelineHandler = this.changeProductTimelineHandler.bind(this);
     }
 
     changeProductNameHandler = (event) => {
-        this.setState({product_name: event.target.event})
+        this.setState({productName: event.target.event})
     }
 
     changeProducStatusHandler = (event) => {
-        this.setState({product_status: event.target.event})
+        this.setState({productStatus: event.target.event})
     }
 
     changeProductDescriptionHandler = (event) => {
-        this.setState({product_description: event.target.event})
+        this.setState({productDescription: event.target.event})
+    }
+
+    changeProductPriceHandler = (event) => {
+        this.setState({productPrice: event.target.event})
+    }
+
+    changeProductTimelineHandler = (event) => {
+        this.setState({productTimeline: event.target.event})
     }
 
     componentDidMount(){
@@ -36,9 +48,11 @@ class CreateProductComponent extends Component {
             ProductService.getProductsById(this.state.id).then( (res) => {
                 let product = res.data;
                 this.setState({
-                    product_name : product.product_name,
-                    product_status : product.product_status,
-                    product_description : product.product_description
+                    productName : product.productName,
+                    productStatus : product.productStatus,
+                    productDescription : product.productDescription,
+                    productPrice: product.productPrice,
+                    productTimeline: product.productTimeline
 
                 });
             })
@@ -49,9 +63,11 @@ class CreateProductComponent extends Component {
     saveOrUpdateProduct = (e) => {
         e.preventDefault();
         let product = {
-            product_name: this.state.product_name,
-            product_status: this.state.product_status,
-            product_description: this.state.product_description
+            productName: this.state.productName,
+            productStatus: this.state.productStatus,
+            productNescription: this.state.productDescription,
+            productPrice: this.state.productPrice,
+            productTimeline: this.state.productTimeline
         };
         if(this.state.id === '/add-product'){
             ProductService.createProduct(product).then(res =>{
@@ -92,17 +108,27 @@ class CreateProductComponent extends Component {
                                         <div className = "form-group">
                                             <label> Product Name: </label>
                                             <input placeholder="Product Name" name="productName" className="form-control" 
-                                                value={this.state.product_name} onChange={this.changeProductNameHandler}/>
+                                                value={this.state.productName} onChange={this.changeProductNameHandler}/>
                                         </div>
                                         <div className = "form-group">
                                             <label> Product Status: </label>
-                                            <input placeholder="Product status" name="productStatus" className="form-control" 
-                                                value={this.state.product_status} onChange={this.changeProducStatusHandler}/>
+                                            <input name="productStatus" className="form-control" 
+                                                value={this.state.productStatus} onChange={this.changeProducStatusHandler}/>
                                         </div>
                                         <div className = "form-group">
                                             <label> Product Description: </label>
                                             <input placeholder="Product Description" name="productDescritpion" className="form-control" 
-                                                value={this.state.product_description} onChange={this.changeProductDescriptionHandler}/>
+                                                value={this.state.productDescription} onChange={this.changeProductDescriptionHandler}/>
+                                        </div>
+                                        <div className = "form-group">
+                                            <label> Product Price: </label>
+                                            <input placeholder="Product Price" name="productStatus" className="form-control" 
+                                                value={this.state.productPrice} onChange={this.changeProductPriceHandler}/>
+                                        </div>
+                                        <div className = "form-group">
+                                            <label> Product Timeline: </label>
+                                            <input placeholder="Product Description" name="productDescritpion" className="form-control" 
+                                                value={this.state.productTimeline} onChange={this.changeProductTimelineHandler}/>
                                         </div>
 
                                         <button className="btn btn-success" onClick={this.saveOrUpdateProduct}>Save</button>

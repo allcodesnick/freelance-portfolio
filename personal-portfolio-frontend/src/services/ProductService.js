@@ -13,7 +13,7 @@ class ProductService{
     }
 
     createProduct(product){
-        return axios.post(PROVIDED_SERVICES_API_BASE_URL + '/add-product');
+        return axios.post(PROVIDED_SERVICES_API_BASE_URL + '/add-product' + product);
     }
 
     updateProduct(productId, product){

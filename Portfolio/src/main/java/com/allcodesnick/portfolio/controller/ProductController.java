@@ -9,13 +9,13 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1/")
-public class MainController {
+public class ProductController {
 
-    private ProductService product_service;
+    private ProductService productService;
 
-    public MainController(ProductService productService) {
+    public ProductController(ProductService productService) {
         super();
-        this.product_service = productService;
+        this.productService = productService;
     }
 
     @GetMapping("/")
@@ -25,28 +25,28 @@ public class MainController {
 
     @GetMapping("/view-product/{id}")
     public Product getProductById(@PathVariable long id){
-        return product_service.findProductById(id);
+        return productService.findProductById(id);
     }
 
 
     @GetMapping("/products")
     public List<Product> getAllProducts(){
-        return product_service.listAllProducts();
+        return productService.listAllProducts();
     }
 
     @PostMapping("/add-product")
     public Product saveNewProduct(@RequestBody Product product){
-        return product_service.createNewProduct(product);
+        return productService.createNewProduct(product);
     }
 
     @DeleteMapping("/delete-product/{id}")
     public void deleteProduct(@PathVariable long id){
-        product_service.deleteProduct(id);
+        productService.deleteProduct(id);
     }
 
 
     @PutMapping("/products/{id}")
     public Product updateProduct(@PathVariable long id, @RequestBody Product product){
-        return product_service.updateProduct(id, product);
+        return productService.updateProduct(id, product);
     }
 }
