@@ -42,7 +42,7 @@ class CreateProductComponent extends Component {
     }
 
     componentDidMount(){
-        if(this.state.id === `/add-product`){
+        if(this.state.id === '_add'){
             return
         }else{
             ProductService.getProductsById(this.state.id).then( (res) => {
@@ -69,7 +69,9 @@ class CreateProductComponent extends Component {
             productPrice: this.state.productPrice,
             productTimeline: this.state.productTimeline
         };
-        if(this.state.id === '/add-product'){
+        console.log('producct => ' + JSON.stringify(product));
+
+        if(this.state.id === '_add'){
             ProductService.createProduct(product).then(res =>{
                 this.props.history.push(`/products`)
             })
@@ -84,9 +86,8 @@ class CreateProductComponent extends Component {
         this.props.history.push(`/`)
     }
 
-    //Title only shows "Update Product"
     getTitle(){
-        if(this.state.id === '/add-product'){
+        if(this.state.id === '_add'){
             return <h3 className="text-center">Add Product</h3>
         } else{
             return <h3 className="text-center">Update Product</h3>
@@ -127,8 +128,8 @@ class CreateProductComponent extends Component {
                                         </div>
                                         <div className = "form-group">
                                             <label> Product Timeline: </label>
-                                            <input placeholder="Product Description" name="productDescritpion" className="form-control" 
-                                                value={this.state.productTimeline} onChange={this.changeProductTimelineHandler}/>
+                                            <input name="productDescritpion" className="form-control" 
+                                            value={this.state.productTimeline} onChange={this.changeProductTimelineHandler}/>
                                         </div>
 
                                         <button className="btn btn-success" onClick={this.saveOrUpdateProduct}>Save</button>
