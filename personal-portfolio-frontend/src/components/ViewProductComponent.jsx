@@ -8,11 +8,16 @@ class ViewProductComponent extends Component {
             id: this.props.match.params.id,
             product: {}
         }
+        this.return = this.return.bind(this);
     }
     componentDidMount() {
         ProductService.getProductsById(this.state.id).then( res => {
             this.setState({product: res.data});
         })
+    }
+
+    return(){
+        this.props.history.push(`/`)
     }
     
     
@@ -44,7 +49,7 @@ class ViewProductComponent extends Component {
                             <div> { this.state.product.productTimeline }</div>
                         </div>
                     </div>
-
+                    <button className="btn btn-danger" onClick={this.return.bind(this)} style={{marginLeft: "10px", marginBottom:"10px"}}>Return</button>
                 </div>
                 
             </div>
