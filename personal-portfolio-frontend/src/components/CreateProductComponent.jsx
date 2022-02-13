@@ -8,8 +8,8 @@ class CreateProductComponent extends Component {
         this.state = {
             id: this.props.match.params.id,
             product_name: '',
-            product_status: '',
-            product_description: ''
+            product_status: 0,
+            product_description: 0
         }
         this.saveOrUpdateProduct = this.saveOrUpdateProduct.bind(this);
         this.changeProductNameHandler = this.changeProductNameHandler.bind(this);
@@ -53,8 +53,6 @@ class CreateProductComponent extends Component {
             product_status: this.state.product_status,
             product_description: this.state.product_description
         };
-        console.log('porduct =>' + JSON.stringify(product))
-
         if(this.state.id === '/add-product'){
             ProductService.createProduct(product).then(res =>{
                 this.props.history.push(`/products`)
