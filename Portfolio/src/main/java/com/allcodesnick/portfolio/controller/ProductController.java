@@ -18,12 +18,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping("/")
-    public String indexPage(){
-        return "index";
-    }
-
-    @GetMapping("/view-product/{id}")
+    @GetMapping("/products/{id}")
     public Product getProductById(@PathVariable long id){
         return productService.findProductById(id);
     }
@@ -34,12 +29,12 @@ public class ProductController {
         return productService.listAllProducts();
     }
 
-    @PostMapping("/add-product")
+    @PostMapping("/products")
     public Product saveNewProduct(@RequestBody Product product){
         return productService.createNewProduct(product);
     }
 
-    @DeleteMapping("/delete-product/{id}")
+    @DeleteMapping("/products/{id}")
     public void deleteProduct(@PathVariable long id){
         productService.deleteProduct(id);
     }

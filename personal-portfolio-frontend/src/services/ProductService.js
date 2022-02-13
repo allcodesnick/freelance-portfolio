@@ -9,11 +9,11 @@ class ProductService{
     }
 
     getProductsById(productId){
-        return axios.get(PROVIDED_SERVICES_API_BASE_URL + '/view-product/' + productId);
+        return axios.get(PROVIDED_SERVICES_API_BASE_URL + '/products/' + productId);
     }
 
     createProduct(product){
-        return axios.post(PROVIDED_SERVICES_API_BASE_URL + '/add-product' + product);
+        return axios.post(PROVIDED_SERVICES_API_BASE_URL + '/products' + product);
     }
 
     updateProduct(productId, product){
@@ -21,7 +21,7 @@ class ProductService{
     }
 
     deleteProduct(productId){
-        return axios.delete(PROVIDED_SERVICES_API_BASE_URL + '/delete-product/' + productId);
+        return axios.delete(PROVIDED_SERVICES_API_BASE_URL + '/products/' + productId);
     }
 }
 

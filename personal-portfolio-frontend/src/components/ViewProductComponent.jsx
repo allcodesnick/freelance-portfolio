@@ -25,15 +25,23 @@ class ViewProductComponent extends Component {
                     <div className = "card-body">
                         <div className = "row">
                             <label>  Product Name: </label>
-                            <div> { this.state.product.product_name }</div>
+                            <div> { this.state.product.productName }</div>
                         </div>
                         <div className = "row">
                             <label> Product Status: </label>
-                            <div> { this.state.product.product_status }</div>
+                            <div> { this.state.product.productStatus }</div>
                         </div>
                         <div className = "row">
                             <label> Product Description: </label>
-                            <div> { this.state.product.product_description }</div>
+                            <div> { this.state.product.productDescription }</div>
+                        </div>
+                        <div className = "row">
+                            <label> Product Status: </label>
+                            <div> { this.state.product.productPrice }</div>
+                        </div>
+                        <div className = "row">
+                            <label> Product Description: </label>
+                            <div> { this.state.product.productTimeline }</div>
                         </div>
                     </div>
 
