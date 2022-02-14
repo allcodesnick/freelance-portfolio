@@ -8,12 +8,12 @@ class CreateProductComponent extends Component {
         this.state = {
             id: this.props.match.params.id,
             productName: '',
-            productStatus: true,
-            productDescription: "",
-            productPrice: 0.00,
-            productTimeline: 0
+            productStatus: '',
+            productDescription: '',
+            productPrice: '',
+            productTimeline: ''
         }
-        this.saveOrUpdateProduct = this.saveOrUpdateProduct.bind(this);
+        this.saveProduct = this.saveProduct.bind(this);
         this.changeProductNameHandler = this.changeProductNameHandler.bind(this);
         this.changeProducStatusHandler = this.changeProducStatusHandler.bind(this);
         this.changeProductDescriptionHandler = this.changeProductDescriptionHandler.bind(this);
@@ -22,23 +22,23 @@ class CreateProductComponent extends Component {
     }
 
     changeProductNameHandler = (event) => {
-        this.setState({productName: event.target.event})
+        this.setState({productName: event.target.value});
     }
 
     changeProducStatusHandler = (event) => {
-        this.setState({productStatus: event.target.event})
+        this.setState({productStatus: event.target.value});
     }
 
     changeProductDescriptionHandler = (event) => {
-        this.setState({productDescription: event.target.event})
+        this.setState({productDescription: event.target.value});
     }
 
     changeProductPriceHandler = (event) => {
-        this.setState({productPrice: event.target.event})
+        this.setState({productPrice: event.target.value});
     }
 
     changeProductTimelineHandler = (event) => {
-        this.setState({productTimeline: event.target.event})
+        this.setState({productTimeline: event.target.value});
     }
 
     componentDidMount(){
@@ -60,7 +60,7 @@ class CreateProductComponent extends Component {
     }
     
     // Not saving
-    saveOrUpdateProduct = (e) => {
+    saveProduct = (e) => {
         e.preventDefault();
         let product = {
             productName: this.state.productName,
@@ -69,15 +69,15 @@ class CreateProductComponent extends Component {
             productPrice: this.state.productPrice,
             productTimeline: this.state.productTimeline
         };
-        console.log('producct => ' + JSON.stringify(product));
+        console.log('product => ' + JSON.stringify(product));
 
         if(this.state.id === '_add'){
             ProductService.createProduct(product).then(res =>{
-                this.props.history.push(`/products`)
+                this.props.history.push('/products')
             })
         } else{
             ProductService.updateProduct(product, this.state.id).then( res =>{
-                this.props.history.push(`/products`)
+                this.props.history.push('/products')
             })
         }
     }
@@ -113,26 +113,28 @@ class CreateProductComponent extends Component {
                                         </div>
                                         <div className = "form-group">
                                             <label> Product Status: </label>
-                                            <input name="productStatus" className="form-control" 
-                                                value={this.state.productStatus} onChange={this.changeProducStatusHandler}/>
+                                            <select value={this.state.productStatus} onChange={this.changeProducStatusHandler} className="form-select">
+                                                <option value="AVAILABLE">AVAILABLE</option>
+                                                <option value="UNVAILABLE">UNAVAILABLE</option>
+
+                                            </select>
                                         </div>
                                         <div className = "form-group">
                                             <label> Product Description: </label>
-                                            <input placeholder="Product Description" name="productDescritpion" className="form-control" 
-                                                value={this.state.productDescription} onChange={this.changeProductDescriptionHandler}/>
+                                            <textarea value={this.state.productDescription} onChange={this.changeProductDescriptionHandler} className="md-textarea form-control" />
                                         </div>
                                         <div className = "form-group">
                                             <label> Product Price: </label>
-                                            <input placeholder="Product Price" name="productStatus" className="form-control" 
+                                            <input placeholder="Product Price" name="productStatus" className="form-control" type="number"
                                                 value={this.state.productPrice} onChange={this.changeProductPriceHandler}/>
                                         </div>
                                         <div className = "form-group">
                                             <label> Product Timeline: </label>
-                                            <input name="productDescritpion" className="form-control" 
+                                            <input name="productDescritpion" className="form-control" type="number"
                                             value={this.state.productTimeline} onChange={this.changeProductTimelineHandler}/>
                                         </div>
 
-                                        <button className="btn btn-success" onClick={this.saveOrUpdateProduct}>Save</button>
+                                        <button className="btn btn-success" onClick={this.saveProduct}>Save</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
                                     </form>
                                 </div>
