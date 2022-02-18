@@ -8,10 +8,10 @@ class CreateProductComponent extends Component {
         this.state = {
             id: this.props.match.params.id,
             productName: '',
-            productStatus: '',
+            productStatus: 0,
             productDescription: '',
-            productPrice: '',
-            productTimeline: ''
+            productPrice: 0.0,
+            productTimeline: 0
         }
         this.saveProduct = this.saveProduct.bind(this);
         this.changeProductNameHandler = this.changeProductNameHandler.bind(this);
@@ -69,11 +69,11 @@ class CreateProductComponent extends Component {
             productPrice: this.state.productPrice,
             productTimeline: this.state.productTimeline
         };
-        console.log('product => ' + JSON.stringify(product));
-
+        console.log('product => ', product);
+        // console.log('product => ' + JSON.stringify(product));
         if(this.state.id === '_add'){
             ProductService.createProduct(product).then(res =>{
-                this.props.history.push('/products')
+                this.props.history.push('/')
             })
         } else{
             ProductService.updateProduct(product, this.state.id).then( res =>{
@@ -109,29 +109,29 @@ class CreateProductComponent extends Component {
                                         <div className = "form-group">
                                             <label> Product Name: </label>
                                             <input placeholder="Product Name" name="productName" className="form-control" 
-                                                value={this.state.productName} onChange={this.changeProductNameHandler}/>
+                                                value={this.state.productName} onChange={this.changeProductNameHandler} required />
                                         </div>
                                         <div className = "form-group">
                                             <label> Product Status: </label>
-                                            <select value={this.state.productStatus} onChange={this.changeProducStatusHandler} className="form-select">
-                                                <option value="AVAILABLE">AVAILABLE</option>
-                                                <option value="UNVAILABLE">UNAVAILABLE</option>
+                                            <select value={this.state.productStatus} onChange={this.changeProducStatusHandler} className="form-select" required>
+                                                <option value="0">AVAILABLE</option>
+                                                <option value="1">UNAVAILABLE</option>
 
                                             </select>
                                         </div>
                                         <div className = "form-group">
                                             <label> Product Description: </label>
-                                            <textarea value={this.state.productDescription} onChange={this.changeProductDescriptionHandler} className="md-textarea form-control" />
+                                            <input type="text" value={this.state.productDescription} onChange={this.changeProductDescriptionHandler} className="form-control"/>
                                         </div>
                                         <div className = "form-group">
                                             <label> Product Price: </label>
                                             <input placeholder="Product Price" name="productStatus" className="form-control" type="number"
-                                                value={this.state.productPrice} onChange={this.changeProductPriceHandler}/>
+                                                value={this.state.productPrice} onChange={this.changeProductPriceHandler} required />
                                         </div>
                                         <div className = "form-group">
                                             <label> Product Timeline: </label>
                                             <input name="productDescritpion" className="form-control" type="number"
-                                            value={this.state.productTimeline} onChange={this.changeProductTimelineHandler}/>
+                                            value={this.state.productTimeline} onChange={this.changeProductTimelineHandler} required/>
                                         </div>
 
                                         <button className="btn btn-success" onClick={this.saveProduct}>Save</button>
