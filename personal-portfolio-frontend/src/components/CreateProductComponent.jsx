@@ -15,7 +15,7 @@ class CreateProductComponent extends Component {
         }
         this.saveProduct = this.saveProduct.bind(this);
         this.changeProductNameHandler = this.changeProductNameHandler.bind(this);
-        this.changeProducStatusHandler = this.changeProducStatusHandler.bind(this);
+        this.changeProductStatusHandler = this.changeProducStatusHandler.bind(this);
         this.changeProductDescriptionHandler = this.changeProductDescriptionHandler.bind(this);
         this.changeProductPriceHandler = this.changeProductPriceHandler.bind(this);
         this.changeProductTimelineHandler = this.changeProductTimelineHandler.bind(this);
@@ -25,7 +25,7 @@ class CreateProductComponent extends Component {
         this.setState({productName: event.target.value});
     }
 
-    changeProducStatusHandler = (event) => {
+    changeProductStatusHandler = (event) => {
         this.setState({productStatus: event.target.value});
     }
 
@@ -59,7 +59,6 @@ class CreateProductComponent extends Component {
         }
     }
     
-    // Not saving
     saveProduct = (e) => {
         e.preventDefault();
         let product = {
@@ -97,7 +96,7 @@ class CreateProductComponent extends Component {
                         <div className = "row">
                             <div className = "card col-md-6 offset-md-3 offset-md-3">
                                 {
-                                    this.getTitle()
+                                    <h3 className="text-center">Add Product</h3>
                                 }
                                 <div className = "card-body">
                                     <form>
@@ -108,7 +107,7 @@ class CreateProductComponent extends Component {
                                         </div>
                                         <div className = "form-group">
                                             <label> Product Status: </label>
-                                            <select value={this.state.productStatus} onChange={this.changeProducStatusHandler} className="form-select" required>
+                                            <select value={this.state.productStatus} onChange={this.changeProductStatusHandler} className="form-select" required>
                                                 <option value="0">AVAILABLE</option>
                                                 <option value="1">UNAVAILABLE</option>
 

@@ -8,7 +8,7 @@ class ListProjectComponent extends Component {
             product:[]
         }
         this.addProduct = this.addProduct.bind(this);
-        this.editProduct = this.editProduct.bind(this);
+        this.updateProduct = this.updateProduct.bind(this);
         this.deleteProduct = this.deleteProduct.bind(this);
     }
 
@@ -20,7 +20,7 @@ class ListProjectComponent extends Component {
         this.props.history.push(`/view-products/${id}`);
     }
 
-    editProduct(id){
+    updateProduct(id){
         this.props.history.push(`/add-poducts/${id}`);
     }
 
@@ -68,7 +68,7 @@ class ListProjectComponent extends Component {
                                                 <td>{product.productPrice}</td>
                                                 <td>{product.productTimeline}</td>
                                                 <td>
-                                                    <button onClick={ () => this.editProduct(product.id)} className = "btn btn-info">Update</button>
+                                                    <button onClick={ () => this.updateProduct(product.id)} className = "btn btn-info">Update</button>
                                                     <button onClick={ () => this.deleteProduct(product.id)} className = "btn btn-danger">Delete</button>
                                                     <button onClick={ () => this.viewProduct(product.id)} className = "btn btn-danger">View</button>
                                                 </td>
