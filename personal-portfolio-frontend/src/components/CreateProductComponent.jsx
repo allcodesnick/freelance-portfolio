@@ -65,19 +65,14 @@ class CreateProductComponent extends Component {
         let product = {
             productName: this.state.productName,
             productStatus: this.state.productStatus,
-            productNescription: this.state.productDescription,
+            productDescription: this.state.productDescription,
             productPrice: this.state.productPrice,
             productTimeline: this.state.productTimeline
         };
         console.log('product => ', product);
-        // console.log('product => ' + JSON.stringify(product));
         if(this.state.id === '_add'){
             ProductService.createProduct(product).then(res =>{
                 this.props.history.push('/')
-            })
-        } else{
-            ProductService.updateProduct(product, this.state.id).then( res =>{
-                this.props.history.push('/products')
             })
         }
     }
