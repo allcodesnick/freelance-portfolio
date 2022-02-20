@@ -21,7 +21,7 @@ class ListProjectComponent extends Component {
     }
 
     updateProduct(id){
-        this.props.history.push(`/add-poducts/${id}`);
+        this.props.history.push(`/add-products/${id}`);
     }
 
     deleteProduct(id){

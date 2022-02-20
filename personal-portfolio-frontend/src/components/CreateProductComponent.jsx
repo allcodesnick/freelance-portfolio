@@ -15,7 +15,7 @@ class CreateProductComponent extends Component {
         }
         this.saveProduct = this.saveProduct.bind(this);
         this.changeProductNameHandler = this.changeProductNameHandler.bind(this);
-        this.changeProductStatusHandler = this.changeProducStatusHandler.bind(this);
+        this.changeProductStatusHandler = this.changeProductStatusHandler.bind(this);
         this.changeProductDescriptionHandler = this.changeProductDescriptionHandler.bind(this);
         this.changeProductPriceHandler = this.changeProductPriceHandler.bind(this);
         this.changeProductTimelineHandler = this.changeProductTimelineHandler.bind(this);
