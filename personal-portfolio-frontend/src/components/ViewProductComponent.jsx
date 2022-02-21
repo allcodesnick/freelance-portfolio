@@ -42,11 +42,11 @@ class ViewProductComponent extends Component {
                         </div>
                         <div className = "row">
                             <label> Product Status: </label>
-                            <div> { this.state.product.productPrice }</div>
+                            <div> ${ this.state.product.productPrice }</div>
                         </div>
                         <div className = "row">
                             <label> Product Description: </label>
-                            <div> { this.state.product.productTimeline }</div>
+                            <div> { this.state.product.productTimeline } Days</div>
                         </div>
                     </div>
                     <button className="btn btn-danger" onClick={this.return.bind(this)} style={{marginLeft: "10px", marginBottom:"10px"}}>Return</button>

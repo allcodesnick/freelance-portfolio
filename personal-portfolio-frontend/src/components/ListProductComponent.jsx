@@ -52,7 +52,7 @@ class ListProjectComponent extends Component {
                                 <th>Product Description</th>
                                 <th>Product Price</th>
                                 <th>Product Timeline</th>
-                                <th>actions</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
 
@@ -65,8 +65,8 @@ class ListProjectComponent extends Component {
                                                 <td>{product.productName}</td>
                                                 <td>{product.productStatus}</td>
                                                 <td>{product.productDescription}</td>
-                                                <td>{product.productPrice}</td>
-                                                <td>{product.productTimeline}</td>
+                                                <td>${product.productPrice}</td>
+                                                <td>{product.productTimeline} Days</td>
                                                 <td>
                                                     <button onClick={ () => this.updateProduct(product.id)} className = "btn btn-info">Update</button>
                                                     <button onClick={ () => this.deleteProduct(product.id)} className = "btn btn-danger">Delete</button>
