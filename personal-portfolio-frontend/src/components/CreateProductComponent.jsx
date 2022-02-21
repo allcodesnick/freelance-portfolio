@@ -44,18 +44,6 @@ class CreateProductComponent extends Component {
     componentDidMount(){
         if(this.state.id === '_add'){
             return
-        }else{
-            ProductService.getProductsById(this.state.id).then( (res) => {
-                let product = res.data;
-                this.setState({
-                    productName : product.productName,
-                    productStatus : product.productStatus,
-                    productDescription : product.productDescription,
-                    productPrice: product.productPrice,
-                    productTimeline: product.productTimeline
-
-                });
-            })
         }
     }
     
