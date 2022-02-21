@@ -79,14 +79,6 @@ class CreateProductComponent extends Component {
     cancel(){
         this.props.history.push(`/`)
     }
-
-    getTitle(){
-        if(this.state.id === '_add'){
-            return <h3 className="text-center">Add Product</h3>
-        } else{
-            return <h3 className="text-center">Update Product</h3>
-        }
-    }
     
     render() {
         return (

@@ -67,7 +67,7 @@ class UpdateProductComponent extends Component {
         };
         console.log('product => ', product);
         ProductService.updateProduct(this.state.id, product).then(res =>{
-            this.props.history.push('/products')
+            this.props.history.push('/')
         })
     }
 
@@ -115,7 +115,7 @@ class UpdateProductComponent extends Component {
                                             value={this.state.productTimeline} onChange={this.changeProductTimelineHandler} required/>
                                         </div>
 
-                                        <button className="btn btn-success" onClick={this.updateProduct}>Save</button>
+                                        <button className="btn btn-success" onClick={this.updateProduct}>Update</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
                                     </form>
                                 </div>
