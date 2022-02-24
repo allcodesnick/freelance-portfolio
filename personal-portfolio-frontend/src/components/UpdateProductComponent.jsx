@@ -94,9 +94,9 @@ class UpdateProductComponent extends Component {
                                         <div className = "form-group">
                                             <label> Product Status: </label>
                                             <select value={this.state.productStatus} onChange={this.changeProductStatusHandler} className="form-select" required>
+                                                <option value="n/a">(Select Option)</option>
                                                 <option value="0">AVAILABLE</option>
                                                 <option value="1">UNAVAILABLE</option>
-
                                             </select>
                                         </div>
                                         <div className = "form-group">

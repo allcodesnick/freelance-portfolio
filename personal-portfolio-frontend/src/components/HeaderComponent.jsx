@@ -15,7 +15,7 @@ class HeaderComponent extends Component {
             <div>
                 <nav className="navbar navbar-expend-md navbar-dark bg-dark">
                     <div>
-                        <a href="https://github.com/allcodesnick" className="navbar-brand">Github Link</a>
+                        <a href="https://github.com/allcodesnick" className="navbar-brand" target="_blank"rel="noreferrer" >Github Link</a>
                     </div>
                     <NavbarComponent />
                 </nav>
