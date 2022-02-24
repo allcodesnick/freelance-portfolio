@@ -17,7 +17,7 @@ function App() {
             <div className="container">
               <Switch>
                 <Route path = "/" exact component = {ListProductComponent}></Route>
-                <Route path = "/home" exact component={IndexComponent}></Route>
+                <Route path = "/index" exact component={IndexComponent}></Route>
                 <Route path = "/view-products/:id" component = {ViewProductComponent}></Route>
                 <Route path = "/add-products/:id" component = {CreateProductComponent}></Route>
                 <Route path = "/update-products/:id" component = {UpdateProductComponent}></Route>

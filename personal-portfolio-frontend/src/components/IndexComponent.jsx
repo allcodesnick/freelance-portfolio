@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 
 class IndexComponent extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        }
-    }
-
+    /* Comment */
     render() {
         return (
             <div>
-               <h3>Index Page</h3>
+               <h3>Index Page from react</h3>
             </div>
         );
     }
