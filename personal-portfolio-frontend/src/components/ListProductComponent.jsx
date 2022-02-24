@@ -13,15 +13,15 @@ class ListProjectComponent extends Component {
     }
 
     addProduct(){
-        this.props.history.push('/add-products/_add');
+        this.props.history.push('/services/add-product/_add');
     }
 
     viewProduct(id){
-        this.props.history.push(`/view-products/${id}`);
+        this.props.history.push(`/services/view-product/${id}`);
     }
 
     updateProduct(id){
-        this.props.history.push(`/update-products/${id}`);
+        this.props.history.push(`/services/update-product/${id}`);
     }
 
     deleteProduct(id){

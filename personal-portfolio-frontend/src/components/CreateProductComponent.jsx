@@ -59,13 +59,13 @@ class CreateProductComponent extends Component {
         console.log('product => ', product);
         if(this.state.id === '_add'){
             ProductService.createProduct(product).then(res =>{
-                this.props.history.push('/')
+                this.props.history.push('/services/view-all')
             })
         }
     }
 
     cancel(){
-        this.props.history.push(`/`)
+        this.props.history.push(`/services/view-all`)
     }
     
     render() {

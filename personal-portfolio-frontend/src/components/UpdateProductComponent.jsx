@@ -55,7 +55,6 @@ class UpdateProductComponent extends Component {
         })
     }
     
-
     updateProduct = (e) => {
         e.preventDefault();
         let product = {
@@ -67,12 +66,12 @@ class UpdateProductComponent extends Component {
         };
         console.log('product => ', product);
         ProductService.updateProduct(this.state.id, product).then(res =>{
-            this.props.history.push('/')
+            this.props.history.push('/services/view-all')
         })
     }
 
     cancel(){
-        this.props.history.push(`/`)
+        this.props.history.push(`/services/view-all`)
     }
     
     render() {

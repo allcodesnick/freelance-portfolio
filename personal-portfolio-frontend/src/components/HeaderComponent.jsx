@@ -13,12 +13,12 @@ class HeaderComponent extends Component {
     render() {
         return (
             <div>
-                <header className="navbar navbar-expend-md navbar-dark bg-dark">
+                <nav className="navbar navbar-expend-md navbar-dark bg-dark">
                     <div>
                         <a href="https://github.com/allcodesnick" className="navbar-brand">Github Link</a>
                     </div>
                     <NavbarComponent />
-                </header>
+                </nav>
             </div>
         );
     }
