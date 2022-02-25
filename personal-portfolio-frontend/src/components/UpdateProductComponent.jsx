@@ -66,12 +66,12 @@ class UpdateProductComponent extends Component {
         };
         console.log('product => ', product);
         ProductService.updateProduct(this.state.id, product).then(res =>{
-            this.props.history.push('/services/view-all')
+            this.props.history.push('/services')
         })
     }
 
     cancel(){
-        this.props.history.push(`/services/view-all`)
+        this.props.history.push(`/services`)
     }
     
     render() {

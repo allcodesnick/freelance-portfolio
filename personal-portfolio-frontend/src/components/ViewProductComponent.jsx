@@ -17,7 +17,7 @@ class ViewProductComponent extends Component {
     }
 
     return(){
-        this.props.history.push(`/services/view-all`)
+        this.props.history.push(`/services`)
     }
     
     

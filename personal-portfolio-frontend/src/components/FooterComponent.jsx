@@ -1,4 +1,3 @@
-
 function FooterComponent () {
     return (
         <div className="fixed-bottom">                    
