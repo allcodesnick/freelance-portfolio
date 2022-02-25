@@ -19,7 +19,6 @@ function HeaderComponent() {
                      </ul>
                  </div>
              </nav>
-
         </div>
      );
 }

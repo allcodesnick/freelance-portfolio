@@ -6,7 +6,7 @@ import ListProductComponent from './components/ListProductComponent';
 import ViewProductComponent from './components/ViewProductComponent';
 import CreateProductComponent from './components/CreateProductComponent';
 import UpdateProductComponent from './components/UpdateProductComponent';
-import IndexComponent from './components/IndexComponent';
+import IndexPageComponent from './components/IndexPageComponent';
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
           <HeaderComponent />
             <div className="container">
               <Switch>
-                <Route path = "/" exact component={IndexComponent}></Route>
+                <Route path = "/" exact component={IndexPageComponent}></Route>
                 <Route path = "/services" exact component = {ListProductComponent}></Route>
                 <Route path = "/services/view-product/:id" component = {ViewProductComponent}></Route>
                 <Route path = "/services/add-product/:id" component = {CreateProductComponent}></Route>
