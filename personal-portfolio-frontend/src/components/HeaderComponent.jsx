@@ -1,6 +1,4 @@
-function HeaderComponent() {
-    /* div className="collapse navbar-collapse" id="navbarNav" */
-   
+function HeaderComponent() {   
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -14,7 +12,7 @@ function HeaderComponent() {
                              <a className="nav-item nav-link" href="/services">Services</a>
                          </li>
                          <li className="nav-item">
-                             <a className="nav-item nav-link disabled" href="/#">Projects</a>
+                             <a className="nav-item nav-link disabled" href="/#">Resume/CV</a>
                          </li>
                      </ul>
                  </div>

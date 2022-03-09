@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/api/v1/")
 public class ProductController {
 
-    private ProductService productService;
+    private final ProductService productService;
 
     public ProductController(ProductService productService) {
         super();
@@ -22,7 +22,6 @@ public class ProductController {
     public Product getProductById(@PathVariable long id){
         return productService.findProductById(id);
     }
-
 
     @GetMapping("/products")
     public List<Product> getAllProducts(){
@@ -39,7 +38,6 @@ public class ProductController {
         productService.deleteProduct(id);
     }
 
-    
     @PutMapping("/products/{id}")
     public Product updateProduct(@PathVariable long id, @RequestBody Product product){
         return productService.updateProduct(id, product);
