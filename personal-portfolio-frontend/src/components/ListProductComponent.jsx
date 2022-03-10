@@ -7,29 +7,10 @@ class ListProjectComponent extends Component {
         this.state = {
             product:[]
         }
-        this.addProduct = this.addProduct.bind(this);
-        this.updateProduct = this.updateProduct.bind(this);
-        this.deleteProduct = this.deleteProduct.bind(this);
     }
-
-    addProduct(){
-        this.props.history.push('/services/add-product/_add');
-    }
-
     viewProduct(id){
         this.props.history.push(`/services/view-product/${id}`);
     }
-
-    updateProduct(id){
-        this.props.history.push(`/services/update-product/${id}`);
-    }
-
-    deleteProduct(id){
-        ProductService.deleteProduct(id).then( res =>{
-            this.setState({product: this.state.product.filter(product => product.id !== id)})
-        })
-    }
-
     componentDidMount(){
         ProductService.getProducts().then((res) => {
             this.setState({ product: res.data });
@@ -40,9 +21,6 @@ class ListProjectComponent extends Component {
         return (
             <div>
                 <h1 className="text-center">Products</h1>
-                <div className="row">
-                    <button className="btn btn-primary" onClick={this.addProduct}>Add Product</button>
-                </div>
                 <div className="row">
                     <table className="table table-striped table bordered">
                         <thead>
@@ -68,8 +46,6 @@ class ListProjectComponent extends Component {
                                                 <td>${product.productPrice}</td>
                                                 <td>{product.productTimeline} Days</td>
                                                 <td>
-                                                    <button onClick={ () => this.updateProduct(product.id)} className = "btn btn-info">Update</button>
-                                                    <button onClick={ () => this.deleteProduct(product.id)} className = "btn btn-danger">Delete</button>
                                                     <button onClick={ () => this.viewProduct(product.id)} className = "btn btn-danger">View</button>
                                                 </td>
                                             </tr>;

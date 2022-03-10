@@ -28,6 +28,7 @@ public class ProductController {
         return productService.listAllProducts();
     }
 
+    /**
     @PostMapping("/products")
     public Product saveNewProduct(@RequestBody Product product){
         return productService.createNewProduct(product);
@@ -42,4 +43,5 @@ public class ProductController {
     public Product updateProduct(@PathVariable long id, @RequestBody Product product){
         return productService.updateProduct(id, product);
     }
+    **/
 }
