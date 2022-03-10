@@ -4,8 +4,7 @@ function IndexPageComponent() {
     /* place bodyContentComponents here */
     return (
         <div>
-           <PageContentComponent name="Nick"/>
-           <PageContentComponent />
+           <PageContentComponent contentTitle="This is a title" contentParagraph="This is the page content paragraph"/>
         </div>
     );
 }
