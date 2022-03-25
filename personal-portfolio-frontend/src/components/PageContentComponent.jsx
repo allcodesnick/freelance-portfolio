@@ -1,6 +1,6 @@
 function PageContentComponent(props) {
     return (
-        <div className="container-fluid">
+        <div>
             <h3>{props.contentTitle}</h3>
             <div>
                 <p>{props.contentParagraph}</p>

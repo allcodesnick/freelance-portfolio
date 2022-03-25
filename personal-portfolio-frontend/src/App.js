@@ -5,6 +5,7 @@ import HeaderComponent from './components/HeaderComponent';
 import ListProductComponent from './components/ListProductComponent';
 import ViewProductComponent from './components/ViewProductComponent';
 import IndexPageComponent from './components/IndexPageComponent';
+import ResumeComponent from './components/ResumeComponent';
 
 function App() {
   
@@ -13,9 +14,10 @@ function App() {
     <div>
       <Router>
           <HeaderComponent />
-            <div className="container">
+            <div>
               <Switch>
                 <Route path = "/" exact component={IndexPageComponent}></Route>
+                <Route path = "/resume" component = {ResumeComponent}></Route>
                 <Route path = "/services" exact component = {ListProductComponent}></Route>
                 <Route path = "/services/view-product/:id" component = {ViewProductComponent}></Route>
               </Switch>

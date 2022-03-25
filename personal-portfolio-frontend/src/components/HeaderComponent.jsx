@@ -12,7 +12,7 @@ function HeaderComponent() {
                              <a className="nav-item nav-link" href="/services">Services</a>
                          </li>
                          <li className="nav-item">
-                             <a className="nav-item nav-link disabled" href="/#">Resume/CV</a>
+                             <a className="nav-item nav-link" href="/resume">Resume/CV</a>
                          </li>
                      </ul>
                  </div>
