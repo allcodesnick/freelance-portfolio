@@ -1,8 +1,11 @@
-.header {
+.outer-banner {
     padding: 60px;
     text-align: center;
-    color: white;
+    color: rgb(255, 208, 0);
     font-size: 30px;
-    height: 350px;
-    background-image: url("./images/banner_background.jpg");
+    height: 450px;
+    background-image: url("./images/banner_background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
   }
