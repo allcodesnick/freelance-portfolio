@@ -5,7 +5,7 @@ class ResumeComponent extends Component {
     render() {
         return (
             <div>
-                <iframe title='resume' src="https://docs.google.com/viewerng/viewer?url=http://infolab.stanford.edu/pub/papers/google.pdf&embedded=true" height="1350px" width="100%"></iframe>
+                <iframe title='resume-preview' src="https://drive.google.com/file/d/1WgBT3tM9dP9VqeFP3wqKyzzSFckxB9oo/preview" width="100%" height="1000" allow="autoplay"></iframe>
             </div>
         );
     }
