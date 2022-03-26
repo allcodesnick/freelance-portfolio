@@ -6,8 +6,8 @@ class BannerComponet extends Component {
     render() {
         return (
             <div className='outer-banner'>
-                <div>
-                    <h1>This is a Banner</h1>
+                <div className='banner-card'>
+                    <h1>Hello World!</h1>
                     <p>About me: </p>
                 </div>
             </div>
