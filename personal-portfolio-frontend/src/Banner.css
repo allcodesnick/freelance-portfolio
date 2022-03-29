@@ -9,6 +9,7 @@
   }
 
   #banner-card {
+    max-height: 350px;
     text-align: left;
     padding: 60px;
     box-shadow: 20px 15px 15px rgb(239, 124, 78);
