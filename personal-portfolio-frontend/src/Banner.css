@@ -1,4 +1,4 @@
-.outer-banner {
+#outer-banner {
     padding: 60px;
     text-align: center;
     color: rgb(255, 208, 0);
@@ -10,12 +10,15 @@
     -webkit-background-size: cover;
   }
 
-  .banner-card {
+  #banner-card {
     padding: 60px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 20px 15px 15px rgb(18, 18, 18);
+    box-shadow: 20px 15px 15px rgb(239, 124, 78);
+    background-image: url("./images/banner_background.jpeg");    
   }
 
+
+
   #banner-portfolio-image {
-    z-index: 1;
+    background-image: none;
   }
