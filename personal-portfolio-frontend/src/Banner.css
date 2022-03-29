@@ -10,18 +10,15 @@
 
   #banner-card {
     overflow: hidden;
-    max-height: 350px;
+    max-height: 400px;
     text-align: left;
-    padding: 60px;
+    padding: 90px;
     box-shadow: 20px 15px 15px rgb(239, 124, 78);
     background-image: url("./images/banner_background.jpeg");    
   }
 
-
-
-
   #banner-portfolio-image {
-    top: 10%;
+    top: 21%;
     right: 8%;
     position: absolute;
     height: 275px;
