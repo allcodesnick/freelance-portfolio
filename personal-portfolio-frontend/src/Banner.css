@@ -9,6 +9,7 @@
   }
 
   #banner-card {
+    overflow: hidden;
     max-height: 350px;
     text-align: left;
     padding: 60px;
