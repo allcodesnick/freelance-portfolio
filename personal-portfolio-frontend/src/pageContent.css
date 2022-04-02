@@ -1,0 +1,10 @@
+#content-section {
+    padding: 30px;
+    color: rgb(255, 208, 0);
+    height: 300px;
+    background-image: url("./images/section-background.jpg");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
