@@ -9,20 +9,27 @@
   }
 
   #banner-card {
+    border-radius: 5px;
     overflow: hidden;
     max-height: 400px;
     text-align: left;
-    padding: 90px;
+    padding: 150px;
     box-shadow: 20px 15px 15px rgb(239, 124, 78);
     background-image: url("./images/banner_background.jpeg");    
   }
 
+  /**
+
   #banner-portfolio-image {
-    top: 21%;
-    right: 8%;
-    position: absolute;
+    border-radius: 2px;
+    top: 20%;
+    right: 5.5%;
     height: 275px;
     width: 200px;
-    box-shadow: 25px 20px 35px rgb(8, 8, 8);
+    position: absolute;
+    overflow: visible;
 
   }
+  */
+  
+  
