@@ -17,7 +17,7 @@ class BannerComponet extends Component {
                         </div>
                         <br />
                         <div class="col-6 col-md-4">
-                            <img src={portfolioImage} alt="profileImage" height="300px"/>
+                            <img src={portfolioImage} alt="profileImage" id='profile-image' className='img'/>
                         </div>
                     </div>
                 </div>
