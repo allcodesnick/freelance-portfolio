@@ -4,6 +4,7 @@ import portfolioImage from '../images/my_image.jpeg';
 
 
 class BannerComponet extends Component {
+    /** i might hae to change "col-6 col-md-4" for img and create a div to fill the image and resize automatically */
     render() {
         return (
             <div id='outer-banner'>
