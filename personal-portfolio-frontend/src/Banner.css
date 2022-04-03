@@ -10,6 +10,7 @@
   }
 
   #banner-card {
+    padding: 30px;
     border-radius: 5px;
     overflow: hidden;
     height: 70vh;    /** image height and width */
@@ -20,19 +21,3 @@
     background-repeat: no-repeat;
     background-size: cover;
     }
-
-  /**
-
-  #banner-portfolio-image {
-    border-radius: 2px;
-    top: 20%;
-    right: 5.5%;
-    height: 275px;
-    width: 200px;
-    position: absolute;
-    overflow: visible;
-
-  }
-  */
-  
-  
