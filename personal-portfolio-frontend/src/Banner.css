@@ -1,7 +1,7 @@
 #outer-banner {
     padding: 50px;
     color: rgb(255, 208, 0);
-    height: 500px;
+    height: 100vh;
     background-image: url("./images/banner-background.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,11 +12,12 @@
   #banner-card {
     border-radius: 5px;
     overflow: hidden;
-    max-height: 400px;
-    padding: 150px; /** image height and width */
+    height: 70vh;    /** image height and width */
+    max-height: 70vh;
     box-shadow: 10px 10px 15px rgb(0, 0, 0);
     background-image: url("./images/banner.jpg"); 
     background-repeat: no-repeat;
+    background-size: cover;
     }
 
   /**
