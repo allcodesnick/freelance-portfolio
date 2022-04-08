@@ -1,6 +1,8 @@
+@import url(https://fonts.googleapis.com/css);
+
 #outer-banner {
     padding: 30px;
-    height: 70vh;
+    height: 80vh;
     background: linear-gradient(to bottom right, #C9D6FF 0%, #E2E2E2 100%);
   }
 
@@ -11,23 +13,22 @@
   height: 60vh;
   max-height: 60vh;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  overflow: hidden;
+  overflow: auto;
   background: linear-gradient(to bottom right, #C9D6FF 0%, #E2E2E2 100%);
 }
 
-#profile-image {
-  max-width: 100%;
-  resize: none;
-
-}
-
-.img {
-  height: auto;
-  width: auto;
+#banner-card img {
+  float: right;
+  height: 200px;  
   border-radius: 5px;
 }
 
-h1 {
-  font-family: "Great Vibes", cursive;
+#banner-card h1 {
+  font-family:'Courier New', Courier, monospace;
+  color:#000000;
+  font-size:10vh;
+  line-height:1em;
+  margin:0 0 0 60px;
+  text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
 }
 
