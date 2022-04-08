@@ -16,7 +16,11 @@ class BannerComponet extends Component {
                 <div id='banner-card'>
                     <h1 id='banner-header'>"Hello World!"</h1>
                     <img src={portfolioImage} alt="profileImage"/>
-                    <p>About me: Contrary to popular belief, Lorem Ipsum is not simply random text.
+                    <br />
+                    <br />
+                    <p>About me:<br /> Contrary to popular belief, Lorem Ipsum is not simply random text.
+                        It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                        Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.About me: Contrary to popular belief, Lorem Ipsum is not simply random text.
                         It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
                         Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.
                         </p>
