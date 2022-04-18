@@ -10,6 +10,7 @@ class BannerComponet extends Component {
             <div id='outer-banner'>
                 <div id='banner-card'>
                     <h1 id='banner-header'>"Hello World!"</h1>
+                    <br />
                     <img src={portfolioImage} alt="profileImage"/>
                     <br />
                     <br />
