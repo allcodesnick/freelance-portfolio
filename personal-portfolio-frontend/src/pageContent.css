@@ -2,7 +2,10 @@
     margin-top: 5px;
     padding: 30px;
     height: 40vh;
+    border: 0px;
     border-left: solid 12px;
-    border-image: linear-gradient(to bottom, #051937, #002464, #002d92, #0031bf, #122eeb) 0% 90%;
-    background:linear-gradient(to right, rgb(37, 37, 119), rgb(124, 43, 43)) 25% 75% ;
+    border-image: linear-gradient(to bottom, #051937, #1b57c0, #002d92, #71e1a7, #13434b) 0% 90%;
 }
+/**
+    background:linear-gradient(to right, rgb(37, 37, 119), rgb(124, 43, 43)) 25% 75% ;
+**/

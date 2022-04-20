@@ -3,6 +3,7 @@
 #outer-banner {
     padding: 30px;
     height: 80vh;
+    background:linear-gradient(to right bottom, #051937, #1b57c0, #002d92, #71e1a7, #13434b) 0% 90%;
   }
 
 #banner-card {
@@ -11,15 +12,16 @@
   border-radius: 5px;
   height: 60vh;
   max-height: 60vh;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   overflow: auto;
+  background: white;
 }
+
 
 #banner-card img {
   float: right;
   height: 200px;  
   border-radius: 5px;
-  box-shadow: 0 8px 8px -4px
 
 }
 

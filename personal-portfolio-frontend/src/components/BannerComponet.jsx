@@ -9,9 +9,9 @@ class BannerComponet extends Component {
         return (
             <div id='outer-banner'>
                 <div id='banner-card'>
+                    <img src={portfolioImage} alt="profileImage"/>
                     <h1 id='banner-header'>"Hello World!"</h1>
                     <br />
-                    <img src={portfolioImage} alt="profileImage"/>
                     <br />
                     <br />
                     <p>About me:<br /> &emsp; Contrary to popular belief, Lorem Ipsum is not simply random text.

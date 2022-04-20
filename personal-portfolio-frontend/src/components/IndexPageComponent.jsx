@@ -7,7 +7,7 @@ function IndexPageComponent() {
             <BannerComponet />
            <PageContentComponent
             contentTitle="This is a title"
-            contentParagraph="This is the page content paragraph"/>
+            contentParagraph="This is the page content paragraph.This is the page content paragraph.This is the page content paragraph.This is the page content paragraph.This is the page content paragraph"/>
             <PageContentComponent
             contentTitle="This is a title"
             contentParagraph="This is the page content paragraph"/>
