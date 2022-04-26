@@ -2,8 +2,8 @@
 
 #outer-banner {
     padding: 30px;
-    height: 80vh;
-    background:linear-gradient(to right bottom, #051937, #1b57c0, #002d92, #71e1a7, #13434b) 0% 90%;
+    height: fit-content;
+    
   }
 
 #banner-card {
@@ -11,23 +11,21 @@
   padding: 30px;
   border-radius: 5px;
   height: 60vh;
-  max-height: 60vh;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  overflow: auto;
-  background: white;
+  min-height:fit-content;
+  min-width: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  background: linear-gradient(to right, #000000, #0f9b0f) 25% 75%;
+  overflow: hidden;
 }
-
 
 #banner-card img {
   float: right;
-  height: 200px;  
-  border-radius: 5px;
-
+  max-height: 60%;
 }
 
 #banner-card h1 {
   font-family:'Courier New', Courier, monospace;
-  color:#000000;
+  color:#ffffff;
   font-size:10vh;
   line-height:1em;
   margin:0 0 0 60px;
@@ -35,5 +33,6 @@
 }
 
 #banner-card p {
-  color: #000;
+  color: rgb(0, 0, 0);
+  text-overflow: ellipsis;
 }
